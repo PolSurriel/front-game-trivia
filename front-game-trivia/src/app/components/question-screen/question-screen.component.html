@@ -1,8 +1,12 @@
 
 <div class ="main-container screen">
     <div class = "barsection">
-        <div class="closebtn">X</div>
-        <app-progressbar ></app-progressbar>
+        <div class="closebtn"
+            (click)="onCloseClick()"
+        >X</div>
+        <app-progressbar 
+        [progress]="barProgress"
+        ></app-progressbar>
     </div>
     <div>
         <app-question-content>
@@ -10,12 +14,23 @@
         </app-question-content>
         <ul>
             <li *ngFor="let answer of answers; let i = index">
-                <app-answer [answer]="answer" [index]="i">{{answers[i]}}</app-answer>
+                <app-answer
+                    [answer]="answer"
+                    [index]="i"
+                    (click)="onAnswerClick(i)"
+                >{{answers[i].text}}</app-answer>
             </li>
         </ul>
 
     </div>
     <div>
-        <app-action-button>Answer</app-action-button>
+        <app-action-button
+        (click)="onSubmitClick()"
+        *ngIf="waitingForAnswer"
+        >Answer</app-action-button>
+        <app-action-button
+        (click)="onClickNext()"
+        *ngIf="!waitingForAnswer"
+        >Next</app-action-button>
     </div>
 </div>

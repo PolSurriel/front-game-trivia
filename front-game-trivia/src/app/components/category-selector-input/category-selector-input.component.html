@@ -2,13 +2,16 @@
 <div class="container">
     <p>Quesiton amount</p>
     <div class="btn-group">
-      <label class="btn btn-primary" [(ngModel)]="radioModel"
-             btnRadio="5" tabindex="0" role="button">All</label>
-      <label class="btn btn-primary" [(ngModel)]="radioModel"
-             btnRadio="10" tabindex="0" role="button">Custom...</label>
+      <label class="btn btn-primary" [(ngModel)]="radioModel" (click)="selectCategory('all')"
+             btnRadio="all" tabindex="0" role="button">All</label>
+      <label class="btn btn-primary" [(ngModel)]="radioModel" (click)="selectCategory('custom')"
+             btnRadio="custom" tabindex="0" role="button">Custom...</label>
        
     </div>
 </div>
-<app-pop-up-section>
-       <app-multi-selector></app-multi-selector>
+<app-pop-up-section #popUpRef (onClose)="onPopupClose()">
+       <app-multi-selector
+       (onOptionsChange)="categoryMultiSelectionChanges($event)"
+       [options]="possibleCategories"
+       ></app-multi-selector>
 </app-pop-up-section>

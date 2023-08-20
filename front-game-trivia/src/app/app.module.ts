@@ -23,6 +23,7 @@ import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { QuestionContentComponent } from './components/question-content/question-content.component';
 import { QuestionAnswerComponent } from './components/question-answer/question-answer.component';
 import { EndgameScreenComponent } from './components/endgame-screen/endgame-screen.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { EndgameScreenComponent } from './components/endgame-screen/endgame-scre
     BrowserAnimationsModule,
     FormsModule,
     ButtonsModule,
-    ProgressbarModule
+    ProgressbarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

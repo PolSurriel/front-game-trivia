@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-difficulty-input',
@@ -10,6 +10,9 @@ export class DifficultyInputComponent {
   @ViewChild('easyOption') easyOption: ElementRef;
   @ViewChild('mediumOption') mediumOption: ElementRef;
   @ViewChild('hardOption') hardOption: ElementRef;
+
+  @Output() onSelectedDifficultyChange = new EventEmitter<string>();
+
 
   public selectOption(selected:string): void {
 
@@ -34,6 +37,8 @@ export class DifficultyInputComponent {
        
         break;
     }
+
+    this.onSelectedDifficultyChange.emit(selected);
     
   }
 

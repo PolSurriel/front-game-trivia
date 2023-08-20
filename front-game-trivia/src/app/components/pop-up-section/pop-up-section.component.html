@@ -1,5 +1,5 @@
-<div class="container">
-    <div class="close">back</div>
+<div class="container" *ngIf="opened" >
+    <div class="close" (click)="close()">back</div>
     <div class="content">
         <ng-content></ng-content>
     </div>

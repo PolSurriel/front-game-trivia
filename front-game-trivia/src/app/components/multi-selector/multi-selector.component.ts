@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output, Input  } from '@angular/core';
 
 @Component({
   selector: 'app-multi-selector',
@@ -6,17 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./multi-selector.component.scss']
 })
 export class MultiSelectorComponent {
-  options: string[] = ['Opción 1', 'Opción 2', 'Opción 3', 'Opción 4'];  // Puedes modificar esta lista como quieras
+  @Input() options: string[];
   selectedOptions: string[] = [];
   filterTerm: string = '';
+
+  @Output() onOptionsChange = new EventEmitter<string[]>();
 
   selectOption(option: string) {
     if (!this.selectedOptions.includes(option)) {
       this.selectedOptions = [...this.selectedOptions, option];
     }
+    this.onOptionsChange.emit(this.selectedOptions);
   }
 
   removeOption(option: string) {
     this.selectedOptions = this.selectedOptions.filter(item => item !== option);
+    this.onOptionsChange.emit(this.selectedOptions);
   }
 }

@@ -17,4 +17,17 @@ app-action-button{
     align-items: center;
     width: 100%;
     gap: 10px;
+
+}
+
+.main-container{
+    
+}
+
+.hide * {
+    opacity: 0;
+}
+.hide * {
+    transition: opacity 0.5s ease-in-out;
+
 }

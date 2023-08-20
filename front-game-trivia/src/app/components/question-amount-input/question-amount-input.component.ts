@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output  } from '@angular/core';
 
 @Component({
   selector: 'app-question-amount-input',
@@ -7,5 +7,14 @@ import { Component } from '@angular/core';
 })
 export class QuestionAmountInputComponent {
   radioModel = '5';
+
+  @Output() onQuestionAmountChange = new EventEmitter<number>();
+
+  constructor() { }
+
+  setQuestionAmount(amount : number) {
+    this.onQuestionAmountChange.emit(amount);
+  }
+
 
 }

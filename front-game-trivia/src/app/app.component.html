@@ -1,5 +1,29 @@
-<!-- <app-welcome-screen class="screen"></app-welcome-screen> -->
-<!-- <app-question-screen class="screen"></app-question-screen> -->
-<app-endgame-screen class="screen"></app-endgame-screen>
-<app-audio-toggle></app-audio-toggle>
-<router-outlet></router-outlet>
+<app-welcome-screen 
+    class="screen"
+    (onStartGameEvent)="onStartGame($event)"
+    *ngIf="currentScreen === 'welcome'"    
+></app-welcome-screen>
+<app-question-screen 
+    #questionScreen
+    class="screen"
+    [questionAmount]="gameSettings.questions.length"
+    [question]="gameSettings.questions[currentQuestion].text"
+    [answers]="gameSettings.questions[currentQuestion].answers"
+    [gameId]="gameSettings.id"
+    [questionIndex]="currentQuestion"
+    (onQuestionAnswered)="onQuestionAnswered()"
+    (onClose)="onGameClose()"
+    *ngIf="currentScreen === 'question'" 
+></app-question-screen>
+<app-endgame-screen
+    #endgameScreen
+    [gameHistory]="gameHistory"
+    class="screen"
+    (onGoBackEvent)="onGameResumeGoBackClicked()"
+    *ngIf="currentScreen === 'endgame'" 
+></app-endgame-screen>
+<app-audio-toggle
+></app-audio-toggle>
+
+<router-outlet
+></router-outlet>
