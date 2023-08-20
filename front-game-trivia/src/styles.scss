@@ -55,3 +55,24 @@ body{
 
 /* Importing Datepicker SCSS file. */
 @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
+
+.btn{
+    background-color: rgb(69, 192, 141);
+    border-color: rgb(55, 136, 102) !important;
+    padding: 10px 20px;
+    font-size: 20px;
+    box-shadow: 2px 2px 0px 0px rgb(64, 153, 116);
+
+}
+
+.btn.active{
+    background-color: rgb(64, 153, 116) !important;
+    border-color: rgb(55, 136, 102) !important;
+
+}
+
+.progress-bar{
+    background-color: rgb(38, 219, 108) !important;
+}
+

@@ -11,7 +11,7 @@ export class CategorySelectorInputComponent {
   @ViewChild(PopUpSectionComponent) popUpRef: PopUpSectionComponent;
   
   radioModel : string = 'all';
-  possibleCategories : string[] = ["science","film_and_tv","music","history","geography","arts_and_literature","sport_and_leisure","general_knowledge","science","food_and_drink"];
+  possibleCategories : string[] = ["film_and_tv","music","history","geography","arts_and_literature","sport_and_leisure","general_knowledge","science","food_and_drink"];
   customSelection : string[] = this.possibleCategories;
 
   @Output() onCategoryChange = new EventEmitter<string[]>();

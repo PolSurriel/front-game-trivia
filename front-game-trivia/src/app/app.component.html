@@ -6,6 +6,7 @@
 <app-question-screen 
     #questionScreen
     class="screen"
+    [correctAnswerId]="gameSettings.questions[currentQuestion].correctAnswerId"
     [questionAmount]="gameSettings.questions.length"
     [question]="gameSettings.questions[currentQuestion].text"
     [answers]="gameSettings.questions[currentQuestion].answers"

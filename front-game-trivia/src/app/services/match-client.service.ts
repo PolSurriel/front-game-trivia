@@ -19,7 +19,6 @@ export class MatchClientService {
     let body = {
       answerId: answerId
     };
-    console.log(body);
     return this.http.post(`${this.baseUrl}/game/${gameId}/question/${questionId}`, body);
   }
 

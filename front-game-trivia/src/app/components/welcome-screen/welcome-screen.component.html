@@ -2,18 +2,18 @@
 <div class ="main-container screen" #container>
         <app-logo></app-logo>
     <div class="main-menu">
+        <app-category-selector-input #categorySelector
+        (onCategoryChange)="onQuestionCategoryChange($event)"
+        ></app-category-selector-input>
         <app-question-amount-input
         (onQuestionAmountChange)="onQuestionAmountChange($event)"
         ></app-question-amount-input>
         <app-difficulty-input
         (onSelectedDifficultyChange)="onSelectedDifficultyChange($event)"
         ></app-difficulty-input>
-        <app-category-selector-input #categorySelector
-        (onCategoryChange)="onQuestionCategoryChange($event)"
-        ></app-category-selector-input>
 
     </div>
-    <app-action-button [type]="'button-main'"
+    <app-action-button [type]="'main'"
     (click)="onPlayClick()"
     >PLAY</app-action-button>
     

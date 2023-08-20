@@ -1,8 +1,8 @@
-$horizontal-padding: 20px;
+$horizontal-padding: 55px;
 $vertical-padding: 10px;
-$shadow-size: 1px;
+$shadow-size: 5px;
 $bodrder-radius: 15px;
-$border-size: 1px;
+$border-size: 2px;
 
 // action-button.component.scss
 button {
@@ -15,9 +15,18 @@ button {
   border: $border-size solid var(--border-color);
 
   border-radius: $bodrder-radius;
-  box-shadow: $shadow-size 0px 0px 0px var(--shadow-color);
+  box-shadow: 1px $shadow-size 0px 0px var(--shadow-color);
+
+  font-size: 40px;
 }
 
 button:hover {
   cursor: pointer;
+}
+
+
+.clicked{
+  box-shadow: none!important;
+  transform: translateY(5px);
+  
 }

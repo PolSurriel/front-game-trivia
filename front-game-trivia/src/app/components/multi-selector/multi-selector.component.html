@@ -1,13 +1,17 @@
+<p>Selected</p>
+<div class="selected-items">
+    <span *ngFor="let item of selectedOptions" class="itemselected">
+        {{ item }} <span class="remove" (click)="removeOption(item)">×</span>
+    </span>
+    <p class="none" *ngIf="selectedOptions.length == 0">No category selected</p>
+</div>
+
 <div class="selector-container">
-    <input type="text" [(ngModel)]="filterTerm" placeholder="Escribe para filtrar..." />
+    <input type="text" [(ngModel)]="filterTerm" placeholder="Type to filter..." />
     <ul>
         <li *ngFor="let option of options | categoryFilter:filterTerm:selectedOptions" (click)="selectOption(option)">
             {{ option }}
         </li>
     </ul>
-</div>
-<div class="selected-items">
-    <span *ngFor="let item of selectedOptions">
-        {{ item }} <span class="remove" (click)="removeOption(item)">×</span>
-    </span>
+    <p *ngIf="(options | categoryFilter:filterTerm:selectedOptions).length === 0">No options found with this filter. Please, try with another search therm.</p>
 </div>

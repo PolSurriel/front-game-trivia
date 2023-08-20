@@ -28,7 +28,20 @@ export class ActionButtonComponent {
     
     if (this.mode === 'compact') {
       this.buttonRef.nativeElement.style.padding = '5px';
+      this.buttonRef.nativeElement.style.fontSize = '5px';
+
+    }else if(this.mode === 'thin'){
+      this.buttonRef.nativeElement.style.padding = '10px';
+      this.buttonRef.nativeElement.style.fontSize = '20px';
+
     }
+  }
+
+  onCLick(){
+    this.buttonRef.nativeElement.classList.add('clicked');
+    setTimeout(() => {
+      this.buttonRef.nativeElement.classList.remove('clicked');
+    }, 200);
   }
 
 }

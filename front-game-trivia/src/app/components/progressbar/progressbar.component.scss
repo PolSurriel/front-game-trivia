@@ -2,6 +2,7 @@ progressbar{
     width: 100%;
     min-width: 10px;
     border-radius: 20px;
+    height: 23px;
 }
 
 .subbar{
@@ -15,4 +16,8 @@ progressbar{
 i{
     display: flex;
     justify-content: center;
+}
+
+bar{
+    background-color: aliceblue !important;
 }

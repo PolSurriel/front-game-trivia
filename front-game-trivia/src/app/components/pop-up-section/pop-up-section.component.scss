@@ -8,19 +8,31 @@
     left:0;
     bottom: 0;
     right: 0;
-    margin-top: -200px;
+    margin-top: -100px;
     z-index: 100;
-    background-color: rgba(133, 133, 133, 0.199);
+    background-color: rgba(71, 71, 71, 0.527);
 }
 
 .content{
-    background-color: red;
+    border: rgb(144, 78, 230) solid 2px;
+    box-shadow: 2px 5px 0px 0px rgb(144, 78, 230);
+    background-color: rgb(95, 7, 211);
     width: 80%;
     min-height: 100px;
     border-radius: 20px;
     padding: 20px;
 }
 .close{
-    width: 80%;
+    width: 85%;
     display: flex;
+    margin-bottom: 10px;
+    z-index: 1000;
+
+}
+
+.close img{
+    width:14px;
+    height: auto;
+
+
 }

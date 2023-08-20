@@ -1,5 +1,9 @@
 <div class="container" *ngIf="opened" >
-    <div class="close" (click)="close()">back</div>
+    <div class="close" (click)="close()">
+        <app-action-button mode="compact" type="main" >
+            <img src="/assets/img/backIcon.png" alt="">
+        </app-action-button>
+    </div>
     <div class="content">
         <ng-content></ng-content>
     </div>

@@ -12,3 +12,48 @@
     overflow-y: scroll;
     max-height: 400px;
 }
+
+h1{
+    font-size: 3.5rem;
+}
+
+li{
+    list-style: none;
+    background-color: rgb(218, 183, 241);
+    border-radius: 25px;
+    margin-bottom: 10px;
+    width: 90%;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    color: rgb(66, 58, 58) !important;
+    border: 2px solid rgb(168, 150, 175);
+}
+
+li p {
+    padding-right: 10px;
+    margin-bottom: 3px;
+}
+
+.questiontext{
+    color:rgb(54, 54, 54);
+}
+
+.correctText{
+    color:rgb(27, 199, 27);
+    padding-left: 10px;
+
+}
+
+.incorrectText{
+    color:rgb(180, 42, 32);
+    padding-left: 10px;
+
+}
+
+.endingMessage{
+    font-size: 2rem;
+    text-align: center;
+    padding:30px;
+    padding-top:0px
+}

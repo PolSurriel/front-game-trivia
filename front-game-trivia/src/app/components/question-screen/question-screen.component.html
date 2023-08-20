@@ -3,34 +3,45 @@
     <div class = "barsection">
         <div class="closebtn"
             (click)="onCloseClick()"
-        >X</div>
+        >
+    <img class="closeicon" src="assets/img/closeicon.png" alt="">
+    </div>
         <app-progressbar 
         [progress]="barProgress"
         ></app-progressbar>
     </div>
     <div>
+        <p class="questionnumeration">
+            {{questionIndex+1}}.
+        </p>
         <app-question-content>
             {{question}}
         </app-question-content>
-        <ul>
-            <li *ngFor="let answer of answers; let i = index">
-                <app-answer
-                    [answer]="answer"
-                    [index]="i"
-                    (click)="onAnswerClick(i)"
-                >{{answers[i].text}}</app-answer>
-            </li>
-        </ul>
+        <div class="answerscontainer">
+            <div 
+                class="answerOption" 
+                (click)="onAnswerClick(i)"  
+                [ngClass]="{'
+                    selected': selectedAnswer === i && waitingForAnswer,
+                    'incorrect': selectedAnswer === i && !waitingForAnswer && correctAnswerId !== answers[i].id,
+                    'correct' : correctAnswerId === answers[i].id,
+                }" 
+                *ngFor="let answer of answers; let i = index">
+                {{i+1}}. {{answers[i].text}}
+            </div>
+        </div>
 
     </div>
-    <div>
+    <div class="action-button">
         <app-action-button
         (click)="onSubmitClick()"
         *ngIf="waitingForAnswer"
+        type="important-action"
         >Answer</app-action-button>
         <app-action-button
         (click)="onClickNext()"
         *ngIf="!waitingForAnswer"
+        type="main"
         >Next</app-action-button>
     </div>
 </div>

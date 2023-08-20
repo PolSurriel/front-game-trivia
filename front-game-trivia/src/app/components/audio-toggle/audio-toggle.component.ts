@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AudioToggleComponent {
 
+  audioOn: boolean = false;
+
+  onClick(event: Event){
+    this.audioOn = !this.audioOn;
+    console.log(this.audioOn);
+    event.stopPropagation();
+  }
+
 }

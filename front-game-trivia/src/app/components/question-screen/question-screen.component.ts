@@ -11,14 +11,13 @@ import { ActionButtonComponent } from '../action-button/action-button.component'
 export class QuestionScreenComponent {
 
   @Input() questionAmount : number;
+  correctAnswerId : number;
   @Input() question : string;
   @Input() questionIndex : number;
   @Input() gameId : number;
   @Input() answers : any[];
   barProgress : number = 10;
-
   waitingForAnswer : boolean = true;
-
   selectedAnswer : number = -1;
 
   @ViewChild('actionButton') actionButton : ActionButtonComponent;
@@ -31,33 +30,18 @@ export class QuestionScreenComponent {
   ) { }
 
 
-  shuffleArray(array: any[]) {
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-    return array;
-}
-
-  public setupQuestion(question : string, answers : string[]) {
-    answers = this.shuffleArray(answers);
-  }
+ 
 
   onAnswerClick(answerIndex : number) {
+    if(!this.waitingForAnswer) return;
+    
     this.selectedAnswer = answerIndex;
   }
 
   onAnswerResult(correctAnswerId : number) {
 
     let chosenAnswerId = this.answers[this.selectedAnswer].id;    
-
-    if(chosenAnswerId == correctAnswerId){
-      console.log("Correct answer");
-    }else {
-      console.log("Wrong answer");
-    }
+    this.correctAnswerId = correctAnswerId;
     this.waitingForAnswer = false;
 
     this.barProgress = ((this.questionIndex+1) / this.questionAmount) * 100;

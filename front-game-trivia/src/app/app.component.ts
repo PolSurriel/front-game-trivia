@@ -24,7 +24,26 @@ export class AppComponent {
     private matchClientService : MatchClientService
   ){}
 
+
+  shuffleArray(array: any[]) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+  }
+
+  
   onStartGame(gameSettings : any) {
+
+    for (let i = 0; i < gameSettings.questions.length; i++) {
+      gameSettings.questions[i].answers = 
+        this.shuffleArray(gameSettings.questions[i].answers);
+      
+    }
+
     this.gameSettings = gameSettings;
     this.currentQuestion = 0;
     this.currentScreen = 'question';
@@ -33,8 +52,6 @@ export class AppComponent {
 
   onQuestionAnswered() {
 
-    console.log(this.gameSettings.questions.length);
-    console.log(this.currentQuestion);
     if(this.currentQuestion == this.gameSettings.questions.length - 1) {
       this.matchClientService.finishGame(this.gameSettings.id).subscribe((response : any) => {
         this.matchClientService.getGameById(this.gameSettings.id)

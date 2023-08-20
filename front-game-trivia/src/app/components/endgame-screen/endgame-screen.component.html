@@ -7,19 +7,20 @@
         </h1>
     </div>
     <div>
+        <div class="endingMessage">
+            You got {{correctAmount}}/{{totalAmount}} ({{percentageCorrect}}%) correct answers!
+        </div>
         <div>
             <ul class="historyList">
                 <li *ngFor="let question of gameHistory.questions; let i = index">
-                    <p>{{question.text}}</p>
-                    <p>Correct answer: {{question.correctAnswer.text}}</p>
-                    <p *ngIf="question.correctAnswer.id !== question.chosenAnswer.id">Your answer: {{question.chosenAnswer.text}}</p>
+                    <p class="questiontext">{{question.text}}</p>
+                    <p class="correctText">Correct answer: {{question.correctAnswer.text}}</p>
+                    <p class="incorrectText" *ngIf="question.correctAnswer.id !== question.chosenAnswer.id">Your answer: {{question.chosenAnswer.text}}</p>
                 </li>
             </ul>
         </div>
-        <div>
-            You got {{correctAmount}}/{{totalAmount}} ({{percentageCorrect}}%) correct answers!
-        </div>
+
     </div>
-    <app-action-button [type]="'button-main'" (click)="onGoBack()" >Go back</app-action-button>
+    <app-action-button [type]="'main'" (click)="onGoBack()" >Go back</app-action-button>
 
 </div>

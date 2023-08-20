@@ -1,7 +1,12 @@
-$edge-disttance:5px;
+$edge-disttance:12px;
 
 app-action-button{
     position: fixed;
     right: $edge-disttance;
     top: $edge-disttance;
+}
+
+img{
+    width: 20px;
+    height: auto;
 }

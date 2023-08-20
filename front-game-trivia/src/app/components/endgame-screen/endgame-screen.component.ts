@@ -15,7 +15,6 @@ export class EndgameScreenComponent {
   @Output() onGoBackEvent = new EventEmitter<void>();
 
   ngOnInit() {
-    console.log(this.gameHistory);
     this.totalAmount = this.gameHistory.questions.length;
     this.correctAmount = 0;
     for (const question of this.gameHistory.questions) {

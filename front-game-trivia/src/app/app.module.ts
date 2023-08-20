@@ -21,7 +21,6 @@ import { QuestionScreenComponent } from './components/question-screen/question-s
 import { ProgressbarComponent } from './components/progressbar/progressbar.component';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { QuestionContentComponent } from './components/question-content/question-content.component';
-import { QuestionAnswerComponent } from './components/question-answer/question-answer.component';
 import { EndgameScreenComponent } from './components/endgame-screen/endgame-screen.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -42,7 +41,6 @@ import { HttpClientModule } from '@angular/common/http';
     QuestionScreenComponent,
     ProgressbarComponent,
     QuestionContentComponent,
-    QuestionAnswerComponent,
     EndgameScreenComponent,
     
   ],
