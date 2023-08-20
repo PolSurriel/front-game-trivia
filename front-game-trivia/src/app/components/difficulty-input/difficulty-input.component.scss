@@ -1,0 +1,33 @@
+$animation-duration: 0.3s;
+
+.option{
+    position:absolute;
+    font-size: 35px;
+    transition: 
+        margin-left $animation-duration ease-in-out,
+        font-size $animation-duration ease-in-out,
+        opacity $animation-duration ease-in-out;
+        ; /* Define la animación aquí */
+}
+
+.options{
+    display: flex;
+    justify-content: center;
+}
+
+.second{
+    margin-left: 220px;
+    opacity: 0.67;
+    font-size: 25px;
+
+}
+.third{
+    margin-left: -220px;
+    opacity: 0.67;
+    font-size: 25px;
+
+}
+
+.options{
+    height: 80px;
+}

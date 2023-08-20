@@ -1,1 +1,13 @@
-<p>multi-selector works!</p>
+<div class="selector-container">
+    <input type="text" [(ngModel)]="filterTerm" placeholder="Escribe para filtrar..." />
+    <ul>
+        <li *ngFor="let option of options | categoryFilter:filterTerm:selectedOptions" (click)="selectOption(option)">
+            {{ option }}
+        </li>
+    </ul>
+</div>
+<div class="selected-items">
+    <span *ngFor="let item of selectedOptions">
+        {{ item }} <span class="remove" (click)="removeOption(item)">×</span>
+    </span>
+</div>

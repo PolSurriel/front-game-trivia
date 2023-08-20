@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,10 @@ import { GoBackButtonComponent } from './components/go-back-button/go-back-butto
 import { MultiSelectorComponent } from './components/multi-selector/multi-selector.component';
 import { WelcomeScreenComponent } from './components/welcome-screen/welcome-screen.component';
 import { AudioToggleComponent } from './components/audio-toggle/audio-toggle.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { CategoryFilterPipe } from './pipes/category-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -27,12 +31,18 @@ import { AudioToggleComponent } from './components/audio-toggle/audio-toggle.com
     MultiSelectorComponent,
     WelcomeScreenComponent,
     AudioToggleComponent,
+    CategoryFilterPipe,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ButtonsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./category-selector-input.component.scss']
 })
 export class CategorySelectorInputComponent {
+  radioModel = '5';
+
 
 }

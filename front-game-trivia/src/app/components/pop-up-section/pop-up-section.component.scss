@@ -1,0 +1,26 @@
+.container{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    margin-top: -200px;
+    z-index: 100;
+    background-color: rgba(133, 133, 133, 0.199);
+}
+
+.content{
+    background-color: red;
+    width: 80%;
+    min-height: 100px;
+    border-radius: 20px;
+    padding: 20px;
+}
+.close{
+    width: 80%;
+    display: flex;
+}

@@ -1,3 +1,5 @@
+@import '~font-awesome/css/font-awesome.css';
+
 @font-face {
     font-family: 'main-bold';
     src: 
@@ -48,3 +50,8 @@ body{
     top: 0;
     position: fixed;
 }
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";

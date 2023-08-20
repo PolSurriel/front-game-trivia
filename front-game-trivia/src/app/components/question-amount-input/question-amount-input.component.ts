@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./question-amount-input.component.scss']
 })
 export class QuestionAmountInputComponent {
+  radioModel = '5';
 
 }
