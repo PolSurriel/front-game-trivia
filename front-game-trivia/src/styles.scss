@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'main-bold';
+    src: 
+        url('assets/fonts/DINRoudPro/DINRoundPro-Bold.woff2') format('woff2'),
+        url('assets/fonts/DINRoudPro/DINRoundPro-Bold.woff') format('woff'),
+        url('assets/fonts/DINRoudPro/DINRoundPro-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+  }
+  
+@font-face {
+font-family: 'main';
+src: 
+    url('assets/fonts/DINRoudPro/DINRoundPro-Black.woff2') format('woff2'),
+    url('assets/fonts/DINRoudPro/DINRoundPro-Black.woff') format('woff'),
+    url('assets/fonts/DINRoudPro/DINRoundPro-Black.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+font-display: swap; 
+}
+
+@font-face {
+    font-family: 'logo';
+    src: 
+        // url('assets/fonts/a_alloy_ink/aAlloyInk.otf') format('otf'),
+        url('assets/fonts/feather/feather_bold_by_typicalbro44_dee263c.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
+
+
+
+*{
+    font-family: 'main', sans-serif;
+    color: whitesmoke;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.screen{
+    background-color: rgb(111, 0, 255);
+    bottom: 0;
+    top: 0;
+    position: fixed;
+}

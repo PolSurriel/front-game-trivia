@@ -1,0 +1,15 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+app-action-button{
+    margin-bottom: 40px;
+}
+
+.main-menu{
+    background: red;
+}

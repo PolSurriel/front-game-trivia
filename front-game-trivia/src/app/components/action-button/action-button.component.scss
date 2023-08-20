@@ -1,0 +1,23 @@
+$horizontal-padding: 20px;
+$vertical-padding: 10px;
+$shadow-size: 1px;
+$bodrder-radius: 15px;
+$border-size: 1px;
+
+// action-button.component.scss
+button {
+  color: var(--font-color);
+  padding: $vertical-padding;
+  padding-left: $horizontal-padding;
+  padding-right: $horizontal-padding;
+
+  background-color: var(--bg-color);
+  border: $border-size solid var(--border-color);
+
+  border-radius: $bodrder-radius;
+  box-shadow: $shadow-size 0px 0px 0px var(--shadow-color);
+}
+
+button:hover {
+  cursor: pointer;
+}
