@@ -1,0 +1,14 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.historyList{
+    width: 100%;
+    gap: 10px;
+    overflow-y: scroll;
+    max-height: 400px;
+}

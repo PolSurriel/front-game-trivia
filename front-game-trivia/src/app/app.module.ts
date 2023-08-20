@@ -22,6 +22,7 @@ import { ProgressbarComponent } from './components/progressbar/progressbar.compo
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { QuestionContentComponent } from './components/question-content/question-content.component';
 import { QuestionAnswerComponent } from './components/question-answer/question-answer.component';
+import { EndgameScreenComponent } from './components/endgame-screen/endgame-screen.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { QuestionAnswerComponent } from './components/question-answer/question-a
     ProgressbarComponent,
     QuestionContentComponent,
     QuestionAnswerComponent,
+    EndgameScreenComponent,
     
   ],
   imports: [

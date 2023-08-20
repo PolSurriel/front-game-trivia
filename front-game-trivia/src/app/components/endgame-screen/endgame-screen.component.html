@@ -1,0 +1,26 @@
+
+<div class ="main-container screen">
+
+    <div>
+        <h1>
+            Match resume
+        </h1>
+    </div>
+    <div>
+        <div>
+            <ul class="historyList">
+                <li *ngFor="let question of gameHistory; let i = index">
+                    
+                    <p>{{question}}</p>
+                    <p>{{question}}</p>
+                    <p>{{question}}</p>
+                </li>
+            </ul>
+        </div>
+        <div>
+            You got {{correctAmount}}/{{totalAmount}} ({{percentageCorrect}}%) correct answers!
+        </div>
+    </div>
+    <app-action-button [type]="'button-main'">Go back</app-action-button>
+
+</div>
