@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+declare module 'canvas-confetti';
+import * as confetti from 'canvas-confetti';
 
 @Component({
   selector: 'app-endgame-screen',
@@ -25,8 +27,20 @@ export class EndgameScreenComponent {
     this.percentageCorrect = Math.round((this.correctAmount / this.totalAmount) * 100);
   }
 
+
+  ngAfterViewInit() {
+    this.launchConfetti();
+  }
   onGoBack(){
     this.onGoBackEvent.emit();
   }
+
+  launchConfetti() {
+    confetti.create(document.getElementById('canvas') as HTMLCanvasElement, {
+      resize: true,
+      useWorker: true,
+    })({ particleCount: 100, spread: 160 });
+  }
+  
 
 }
