@@ -1,0 +1,26 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+.barsection{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.closebtn{
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+
+app-progressbar{
+    width: 80%;
+}

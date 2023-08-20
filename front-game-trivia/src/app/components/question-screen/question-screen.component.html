@@ -1,0 +1,21 @@
+
+<div class ="main-container screen">
+    <div class = "barsection">
+        <div class="closebtn">X</div>
+        <app-progressbar ></app-progressbar>
+    </div>
+    <div>
+        <app-question-content>
+            {{question}}
+        </app-question-content>
+        <ul>
+            <li *ngFor="let answer of answers; let i = index">
+                <app-answer [answer]="answer" [index]="i">{{answers[i]}}</app-answer>
+            </li>
+        </ul>
+
+    </div>
+    <div>
+        <app-action-button>Answer</app-action-button>
+    </div>
+</div>

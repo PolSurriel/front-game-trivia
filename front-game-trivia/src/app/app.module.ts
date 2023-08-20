@@ -17,6 +17,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { CategoryFilterPipe } from './pipes/category-filter.pipe';
+import { QuestionScreenComponent } from './components/question-screen/question-screen.component';
+import { ProgressbarComponent } from './components/progressbar/progressbar.component';
+import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
+import { QuestionContentComponent } from './components/question-content/question-content.component';
+import { QuestionAnswerComponent } from './components/question-answer/question-answer.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +37,10 @@ import { CategoryFilterPipe } from './pipes/category-filter.pipe';
     WelcomeScreenComponent,
     AudioToggleComponent,
     CategoryFilterPipe,
+    QuestionScreenComponent,
+    ProgressbarComponent,
+    QuestionContentComponent,
+    QuestionAnswerComponent,
     
   ],
   imports: [
@@ -39,7 +48,8 @@ import { CategoryFilterPipe } from './pipes/category-filter.pipe';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    ButtonsModule
+    ButtonsModule,
+    ProgressbarModule
   ],
   providers: [],
   bootstrap: [AppComponent],
