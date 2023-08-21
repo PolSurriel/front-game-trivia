@@ -1,5 +1,6 @@
 // Angular imports
 import { Component, ElementRef, ViewChild, EventEmitter, Output } from '@angular/core';
+import { Difficulty } from 'src/app/enums/difficulty.enum';
 
 @Component({
   selector: 'app-difficulty-input',
@@ -7,6 +8,9 @@ import { Component, ElementRef, ViewChild, EventEmitter, Output } from '@angular
   styleUrls: ['./difficulty-input.component.scss']
 })
 export class DifficultyInputComponent {
+
+  // Exporting the enum to be used in the template
+  Difficulty = Difficulty;
 
   // References to the individual difficulty option elements in the template
   @ViewChild('easyOption') easyOption: ElementRef;
@@ -20,25 +24,25 @@ export class DifficultyInputComponent {
    * Method to select a difficulty option and update visual styles accordingly
    * @param selected - string value representing the difficulty selected
    */
-  public selectOption(selected: string): void {
+  public selectOption(selected: Difficulty): void {
     // Remove any existing positional classes from the options
     this.removePositionalClasses();
 
     // Depending on the selected difficulty, add the appropriate positional classes
     switch (selected) {
-      case 'easy':
+      case Difficulty.EASY:
         this.easyOption.nativeElement.classList.add('first');
         this.mediumOption.nativeElement.classList.add('second');
         this.hardOption.nativeElement.classList.add('third');
         break;
 
-      case 'medium':
+      case Difficulty.MEDIUM:
         this.mediumOption.nativeElement.classList.add('first');
         this.hardOption.nativeElement.classList.add('second');
         this.easyOption.nativeElement.classList.add('third');
         break;
 
-      case 'hard':
+      case Difficulty.HARD:
         this.hardOption.nativeElement.classList.add('first');
         this.easyOption.nativeElement.classList.add('second');
         this.mediumOption.nativeElement.classList.add('third');

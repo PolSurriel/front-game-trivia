@@ -81,6 +81,8 @@ export class QuestionScreenComponent {
         this.onAnswerResult(response.correctAnswerId);
       }, (error: any) => {
         console.log(error);
+        alert('Error sending answer!');
+        
       });
   }
 

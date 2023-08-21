@@ -26,6 +26,11 @@ $option-spacing: 220px;   // Spacing between options
     display: flex;
     justify-content: center;
     height: 80px;
+
+}
+
+.first {
+    opacity: $default-opacity !important;
 }
 
 // Styling for secondary option

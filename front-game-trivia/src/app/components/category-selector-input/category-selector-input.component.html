@@ -11,8 +11,8 @@
            <label 
                class="btn btn-primary" 
                [(ngModel)]="radioModel" 
-               (click)="selectCategory('all')"
-               btnRadio="all" 
+               (click)="selectCategory(RadioModel.All)"
+               [btnRadio]="RadioModel.All" 
                tabindex="0" 
                role="button">
                All
@@ -22,8 +22,8 @@
            <label 
                class="btn btn-primary" 
                [(ngModel)]="radioModel" 
-               (click)="selectCategory('custom')"
-               btnRadio="custom" 
+               (click)="selectCategory(RadioModel.Custom)"
+               [btnRadio]="RadioModel.Custom" 
                tabindex="0" 
                role="button">
                Custom...

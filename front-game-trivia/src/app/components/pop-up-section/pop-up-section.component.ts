@@ -1,5 +1,5 @@
 // Angular core imports
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-pop-up-section',
@@ -13,6 +13,7 @@ export class PopUpSectionComponent {
 
   // Event emitted to notify the parent component when the pop-up is closed
   @Output() onClose = new EventEmitter<void>();
+  @Input() closeCallback?: () => void;
 
   /**
    * Opens the pop-up by setting the 'opened' property to true.
@@ -28,5 +29,6 @@ export class PopUpSectionComponent {
   public close() {
     this.opened = false;
     this.onClose.emit();
+    this.closeCallback?.call(this);
   }
 }

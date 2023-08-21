@@ -1,6 +1,10 @@
 import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { MatchClientService } from 'src/app/services/match-client.service';
 import { CategorySelectorInputComponent } from '../category-selector-input/category-selector-input.component';
+import { GameInfo } from 'src/app/models/GameInfo';
+import { Difficulty } from 'src/app/enums/difficulty.enum';
+import { GameService } from 'src/app/services/game.service';
+
 
 @Component({
   selector: 'app-welcome-screen',
@@ -13,14 +17,14 @@ export class WelcomeScreenComponent {
   config: any = {
     amount: 5,
     category: [],
-    difficulty: 'easy'
+    difficulty: Difficulty.EASY
   };
 
   // Duration for closing screen animation
   animationCloseScreenDuration: number = 500;
 
   // Event to be emitted when starting the game
-  @Output() onStartGameEvent = new EventEmitter<any>();
+  @Output() onStartGameEvent = new EventEmitter<GameInfo>();
   
   // References to child components and elements
   @ViewChild(CategorySelectorInputComponent) categorySelector: CategorySelectorInputComponent;
@@ -30,7 +34,7 @@ export class WelcomeScreenComponent {
   readyToClose: boolean = false;
 
   constructor(
-    private matchClientService: MatchClientService
+    private matchClientService: MatchClientService,
   ) { }
 
   // After component's view is initialized, the game's category is set
@@ -54,7 +58,7 @@ export class WelcomeScreenComponent {
   }
 
   // Emit the game start event (recursive if not ready)
-  onStartGame(game: any) {
+  onStartGame(game: GameInfo) {
     if (this.readyToClose) {
       this.onStartGameEvent.emit(game);
     } else {
@@ -81,10 +85,12 @@ export class WelcomeScreenComponent {
         this.config.category
       ).subscribe(
         (data) => {
-          this.onStartGame(data);
+          this.onStartGame(data as GameInfo);
         },
         (error) => {
-          console.error('Error:', error);
+          console.log(error);
+          alert('Error creating game!');
+          location.reload();
         }
       );
   }
