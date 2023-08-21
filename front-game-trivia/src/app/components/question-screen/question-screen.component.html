@@ -18,7 +18,7 @@
 
         <!-- Displaying question number -->
         <p class="questionnumeration">
-            {{ questionIndex + 1 }}.
+            {{ gameService.currentQuestionIndex + 1 }}.
         </p>
 
         <!-- Displaying the main question content -->
@@ -59,9 +59,16 @@
         <!-- Next button, displayed after user has provided an answer -->
         <app-action-button
             (click)="onClickNext()"
-            *ngIf="!waitingForAnswer"
+            *ngIf="!waitingForAnswer && gameService.currentQuestionIndex !== questionAmount - 1"
             type="main">
             Next
+        </app-action-button>
+
+        <app-action-button
+            (click)="onClickGoToResume()"
+            *ngIf="!waitingForAnswer && gameService.currentQuestionIndex === questionAmount - 1"
+            type="main">
+            Go to resume
         </app-action-button>
     </div>
 

@@ -29,6 +29,11 @@ export class GameService {
     });
   }
 
+  allQuestionsAnswered(): boolean {
+    return this.currentQuestionIndex >= this.currentGame.questions.length;
+  }
+
+
   answerQuestion(answerId: number): Promise<any> {
     return new Promise((resolve, reject) => {
       if (!this.currentGame || this.currentQuestionIndex >= this.currentGame.questions.length) {
@@ -36,8 +41,8 @@ export class GameService {
         return;
       }
       const gameId = this.currentGame.id;
-      const questionId = this.currentGame.questions[this.currentQuestionIndex].id;
-      this.matchClientService.answerQuestion(gameId, questionId, answerId)
+      const questionIndex = this.currentQuestionIndex;
+      this.matchClientService.answerQuestion(gameId, questionIndex, answerId)
         .subscribe(resolve, reject);
     });
   }
@@ -60,13 +65,16 @@ export class GameService {
   }
 
   getGameHistory(): Promise<GameInfo> {
+    console.log(this.currentGame);
     return new Promise((resolve, reject) => {
       if (!this.currentGame) {
         reject('No active game.');
         return;
       }
       this.matchClientService.getGameById(this.currentGame.id)
-        .subscribe((data: GameInfo) => {
+        .subscribe((data: any) => {
+          console.log(data);
+          this.currentGame = data as GameInfo;
           resolve(data);
         }, reject);
     });

@@ -1,5 +1,4 @@
 import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
-import { MatchClientService } from 'src/app/services/match-client.service';
 import { CategorySelectorInputComponent } from '../category-selector-input/category-selector-input.component';
 import { GameInfo } from 'src/app/models/GameInfo';
 import { Difficulty } from 'src/app/enums/difficulty.enum';
@@ -34,7 +33,7 @@ export class WelcomeScreenComponent {
   readyToClose: boolean = false;
 
   constructor(
-    private matchClientService: MatchClientService,
+    private gameService: GameService
   ) { }
 
   // After component's view is initialized, the game's category is set
@@ -70,29 +69,25 @@ export class WelcomeScreenComponent {
 
   // Handle play button click. Triggers screen hide animation and creates a new game
   onPlayClick() {
+    
+    this.gameService.startNewGame(
+      this.config.amount,
+      this.config.difficulty,
+      this.config.category
+    ).then((gameInfo : GameInfo) => {
+      this.onStartGame(gameInfo);
+    }).catch(error => {
+        console.log("Error creating new game: ", error);
+        alert('Error creating game!');
+        location.reload();
+    });
     // Add the 'hide' class for the animation
     this.container.nativeElement.classList.add('hide');
     this.readyToClose = false;
     setTimeout(() => {
       this.readyToClose = true;
     }, this.animationCloseScreenDuration);
-
-    // Use the service to create a new game with the selected configuration
-    this.matchClientService
-      .createNewGame(
-        this.config.amount,
-        this.config.difficulty,
-        this.config.category
-      ).subscribe(
-        (data) => {
-          this.onStartGame(data as GameInfo);
-        },
-        (error) => {
-          console.log(error);
-          alert('Error creating game!');
-          location.reload();
-        }
-      );
+   
   }
 
 }
