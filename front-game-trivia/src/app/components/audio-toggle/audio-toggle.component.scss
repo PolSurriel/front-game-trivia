@@ -10,3 +10,9 @@ img{
     width: 20px;
     height: auto;
 }
+
+@media (min-width: 500px) {
+    img{
+        width: 40px;
+    }
+}

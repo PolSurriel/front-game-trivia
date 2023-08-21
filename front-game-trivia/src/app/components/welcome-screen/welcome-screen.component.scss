@@ -31,3 +31,17 @@ app-action-button{
     transition: opacity 0.5s ease-in-out;
 
 }
+
+
+@media (min-width: 550px) {
+    
+   
+
+    .play-button{
+        transform: scale(1.5);
+        margin-bottom: 100px;
+    }
+
+ 
+
+}

@@ -7,10 +7,10 @@
         </h1>
     </div>
     <div>
-        <div class="endingMessage">
-            You got {{correctAmount}}/{{totalAmount}} ({{percentageCorrect}}%) correct answers!
-        </div>
-        <div>
+        <div class="historyContainer">
+            <div class="endingMessage">
+                You got {{correctAmount}}/{{totalAmount}} ({{percentageCorrect}}%) correct answers!
+            </div>
             <ul class="historyList">
                 <li *ngFor="let question of gameHistory.questions; let i = index">
                     <p class="questiontext">{{question.text}}</p>

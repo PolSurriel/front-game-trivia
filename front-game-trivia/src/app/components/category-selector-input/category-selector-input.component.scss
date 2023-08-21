@@ -4,3 +4,11 @@ p{
     margin-bottom: 2px;
     text-align: center;
 }
+
+@media (min-width: 550px) {
+    
+    .container{
+        transform: scale(1.5);
+    }
+
+}
