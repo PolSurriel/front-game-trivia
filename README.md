@@ -1,71 +1,56 @@
-# 🎮 API Game Trivia 
+¡Perfecto! Ahora redactaré un README detallado y maquetado para el repositorio `front-game-trivia` basándome en la información que has proporcionado:
 
-API Game Trivia is a robust backend service designed to power the Game Trivia application. Developed with Spring Boot, it provides a flexible and scalable solution for trivia game enthusiasts.
+---
+
+# 🎮 Front Game Trivia 
+
+Welcome to the frontend of the Game Trivia application! Designed with mobile users in mind, this Angular-based application provides an interactive and visually appealing experience for trivia enthusiasts.
 
 ## 📌 Table of Contents
 
-- [Structure](#structure)
+- [Design Philosophy](#design-philosophy)
+- [Color Palette](#color-palette)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Running the Application](#running-the-application)
-  - [Setting up in IntelliJ](#setting-up-in-intellij)
-- [Testing](#testing)
-  - [Integration Tests](#integration-tests)
-- [Observations](#observations)
+- [Further Development](#further-development)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 
-## 🏗 Structure
+## 🎨 Design Philosophy
 
-The codebase is organized to facilitate both development and scaling. Here's a brief overview:
+The application follows a **mobile-first design**. Given the app's simplicity with few on-screen elements, the desktop design mirrors the mobile version with size adjustments. As the application scales and integrates features like user accounts, logins, etc., these would be incorporated into app menus. Certain new features might find their place as sections on the desktop version, making use of the additional screen space.
 
-### `com.example.trivia`
-This is the main package, and it contains several pivotal sub-packages:
-(… previous content ...)
+## 🌈 Color Palette
+
+The chosen color palette revolves around vibrant background colors, and here's why:
+
+- **Game-Friendly**: Vibrant background colors are apt for a gaming application, creating an engaging environment.
+- **Energetic Feel**: An energetic palette adds personality and is effective in conveying emotions.
+- **Design Simplification**: Opting for such a palette eliminates the need for multiple themes, such as light and dark, simplifying the design process.
 
 ## 🚀 Getting Started
 
-### Prerequisites
+1. Clone the repository from [GitHub](https://github.com/PolSurriel/front-game-trivia).
+2. Navigate to the project root directory.
+3. Install the required packages using:
+   ```bash
+   npm install
+   ```
+4. Start the development server with:
+   ```bash
+   ng serve
+   ```
 
-- Java (Version X.X.X recommended)
-- Gradle
+## 📈 Further Development
 
-### Running the Application
+As the application evolves, here are some considerations:
 
-(… previous content ...)
-
-### Setting up in IntelliJ
-
-🔗 **For the frontend repository, visit:** [Frontend Game Trivia on GitHub](https://github.com/PolSurriel/front-game-trivia)
-
-1. Clone the repository to your local machine.
-2. Open IntelliJ IDEA.
-3. Click on "Open" and select the `api-game-trivia` directory.
-4. Once the project is imported, IntelliJ should automatically detect and use the Gradle settings. 
-5. Right-click on `TriviaApplication.java` and select `Run` to start the server.
-
-## 🧪 Testing
-
-Our commitment to quality means we place a heavy emphasis on testing.
-
-- **Unit Tests**: Located in the `test` directory. Run as you would any other Java tests.
-
-### Integration Tests
-
-Integration tests are provided as a JSON collection exported from Postman. Import this collection into Postman to execute them.
-
-## 📝 Observations
-
-- **Database Choice**: We've chosen to use an in-memory database (H2) to streamline development. Using DAOs to generate the database is a significant time-saver. This approach is suitable for a technical test, but for scaling to a real product, the database choice would need a re-evaluation.
-  
-- **Database Design Flaw**: There's an accumulation of records of complete and incomplete games (e.g., from closed tabs). It would be beneficial to either develop an SQL process to remove older records or introduce a batch microservice for this purpose.
-
-- **Project Management**: The project leverages the GitFlow branching model, ensuring structured and efficient management of features, releases, and fixes.
+- **Feature Integration**: Features like user accounts, logins, and more would be integrated into the app's menus.
+- **Desktop Expansion**: With more features, the desktop version could incorporate additional sections, optimizing the screen space.
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our `CONTRIBUTING.md` for details.
+We're open to contributions! If you have ideas or improvements, feel free to fork the repository and create a pull request.
 
 ## 📜 License
 
@@ -73,4 +58,8 @@ This project is licensed under the MIT License. See the `LICENSE.md` file for de
 
 ## 📞 Contact
 
-For more details, please reach out to [psurrielm@gmail.com](mailto:psurrielm@gmail.com).
+For more details or inquiries, please reach out to [email@domain.com](mailto:email@domain.com).
+
+---
+
+Espero que este README cumpla con tus expectativas para el repositorio `front-game-trivia`. Si hay algún otro detalle o sección que quieras agregar o modificar, no dudes en decírmelo.
