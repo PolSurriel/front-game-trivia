@@ -1,10 +1,18 @@
-<div class="container" *ngIf="opened" >
+<!-- Modal container, shown only if 'opened' is true -->
+<div class="container" *ngIf="opened">
+
+    <!-- Close button for the modal -->
     <div class="close" (click)="close()">
-        <app-action-button mode="compact" type="main" >
-            <img src="/assets/img/backIcon.png" alt="">
+        <app-action-button mode="compact" type="main">
+            <!-- Back icon for the close button -->
+            <img src="/assets/img/backIcon.png" alt="Back Icon">
         </app-action-button>
     </div>
+    
+    <!-- Main content of the modal -->
     <div class="content">
+        <!-- Dynamic content passed from the parent component -->
         <ng-content></ng-content>
     </div>
+
 </div>

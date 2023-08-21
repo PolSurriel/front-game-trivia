@@ -1,4 +1,12 @@
-.main-container{
+// Variables
+$answer-option-bg: rgb(218, 183, 241);
+$answer-option-color: rgb(66, 58, 58);
+$answer-option-border: 2px solid rgb(168, 150, 175);
+$selected-border-color: rgb(199, 197, 197);
+$default-font-size: 25px;
+
+// Main container styles
+.main-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -6,8 +14,8 @@
     width: 100%;
 }
 
-
-.barsection{
+// Bar section styles
+.barsection {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -15,57 +23,59 @@
     margin-top: 60px;
 }
 
-.closebtn{
-    margin-top:-5px;
+// Close button styles
+.closebtn {
+    margin-top: -5px;
     margin-right: 10px;
-    font-size: 25px;
+    font-size: $default-font-size;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
-.closebtn:hover{
-    cursor: pointer;
-}
-
-app-progressbar{
+// App progress bar styles
+app-progressbar {
     width: 80%;
 }
 
-
-.closeicon{
+// Close icon styles
+.closeicon {
     width: 25px;
     height: auto;
 }
 
-.action-button{
+// Action button styles
+.action-button {
     margin-bottom: 100px;
-    
 }
 
-.questionnumeration{
+// Question numeration styles
+.questionnumeration {
     text-align: center;
-    font-size: 25px;
-    margin-bottom: 0px;;
+    font-size: $default-font-size;
+    margin-bottom: 0;
 }
 
-.answerOption{
-    background-color: rgb(218, 183, 241);
-    font-size: 25px;
+// Answer option styles
+.answerOption {
+    background-color: $answer-option-bg;
+    font-size: $default-font-size;
     border-radius: 25px;
     margin-bottom: 10px;
     width: 90%;
-    padding-left: 20px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    color: rgb(66, 58, 58) !important;
-    border: 2px solid rgb(168, 150, 175);
+    padding: 5px 20px; // combined vertical and horizontal padding
+    color: $answer-option-color !important; // consider removing !important if not needed
+    border: $answer-option-border;
 
+    &:hover {
+        background-color: rgb(230, 195, 255);
+        cursor: pointer;
+    }
 }
 
-.answerOption:hover{
-    background-color: rgb(230, 195, 255);
-    cursor: pointer;
-}
-
-.answerscontainer{
+// Answers container styles
+.answerscontainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -73,36 +83,35 @@ app-progressbar{
     width: 100%;
 }
 
-.selected{
-    background-color: rgb(219, 139, 35) !important;
-    color: antiquewhite !important;
-    border: 2px solid rgb(199, 197, 197);
+// Selected answer option styles
+.selected {
+    background-color: rgb(219, 139, 35) !important; 
+    color: antiquewhite !important; 
+    border: 2px solid $selected-border-color;
 }
 
-
-.correct{
-    background-color: rgb(82, 199, 156)  !important;
+// Correct answer option styles
+.correct {
+    background-color: rgb(82, 199, 156) !important;
     color: antiquewhite !important;
-    border: 2px solid rgb(199, 197, 197);
-    scale:1.05;
-    transition: scale 0.5s;
+    border: 2px solid $selected-border-color;
+    transform: scale(1.05);
+    transition: transform 0.5s;
 }
 
-.incorrect{
-    background-color: rgb(230, 72, 72)  !important;
+// Incorrect answer option styles
+.incorrect {
+    background-color: rgb(230, 72, 72) !important;
     color: antiquewhite !important;
-    border: 2px solid rgb(199, 197, 197);
-    scale:0.9;
-    transition: scale 0.5s;
-
+    border: 2px solid $selected-border-color;
+    transform: scale(0.9);
+    transition: transform 0.5s;
 }
 
+// Media query adjustments for larger screens
 @media (min-width: 550px) {
-    
-    .questionnumeration{
+    .questionnumeration {
         font-size: 70px;
         right: 40px;
     }
-
-    
 }

@@ -1,14 +1,14 @@
-p{
-    margin: 0;
+// Default paragraph styling
+p {
+    margin: 0 0 2px 0; // No margin except a small bottom margin
     padding: 0;
-    margin-bottom: 2px;
     text-align: center;
 }
 
+// Media queries for larger screens
 @media (min-width: 550px) {
-    
-    .container{
+    // Scaling the container for screens wider than 550px
+    .container {
         transform: scale(1.5);
     }
-
 }

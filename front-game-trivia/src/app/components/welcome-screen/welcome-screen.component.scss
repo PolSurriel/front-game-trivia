@@ -1,4 +1,4 @@
-.main-container{
+.main-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -6,42 +6,27 @@
     width: 100%;
 }
 
-app-action-button{
+app-action-button {
     margin-bottom: 40px;
 }
 
-.main-menu{
+.main-menu {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     gap: 40px;
-
-}
-
-.main-container{
-    
 }
 
 .hide * {
     opacity: 0;
-}
-.hide * {
     transition: opacity 0.5s ease-in-out;
-
 }
-
 
 @media (min-width: 550px) {
-    
-   
-
-    .play-button{
+    .play-button {
         transform: scale(1.5);
         margin-bottom: 100px;
     }
-
- 
-
 }

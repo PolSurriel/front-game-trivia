@@ -1,21 +1,28 @@
-p{
-    font-size: 1.7rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
+// Variables
+$default-font-size: 1.7rem;
+$default-font-weight: 600;
+$default-margin-bottom: 2rem;
+$default-text-color: #fff;
+
+$large-screen-font-size: 3rem;
+$large-screen-padding-horizontal: 20px;
+
+// Default paragraph styling
+p {
+    font-size: $default-font-size;
+    font-weight: $default-font-weight;
+    margin-bottom: $default-margin-bottom;
     text-align: center;
-    color: #fff;
-    left:25px;
-    right: 25px;
+    color: $default-text-color;
+    left: 25px;   // This will only apply if the position property is set to relative, absolute, or fixed.
+    right: 25px;  // Same comment as above.
 }
 
-
+// Media query adjustments for larger screens
 @media (min-width: 550px) {
-    
-    P{
-        font-size: 3rem;
-        padding-right: 20px;
-        padding-left: 20px;
+    p {
+        font-size: $large-screen-font-size;
+        padding-right: $large-screen-padding-horizontal;
+        padding-left: $large-screen-padding-horizontal;
     }
- 
-
 }

@@ -1,47 +1,55 @@
-.container{
+// Variables
+$primary-border-color: rgb(144, 78, 230);
+$container-bg-color: rgb(95, 7, 211);
+$border-width: 2px;
+$primary-border-radius: 20px;
+$shadow-offset-x: 2px;
+$shadow-offset-y: 5px;
+
+// Main container styles
+.container {
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     bottom: 0;
     right: 0;
     margin-top: -100px;
     z-index: 100;
-    width: 100% !important;
+    width: 100% !important;  // Generally, avoid using !important. Only use it if there's no other way.
 }
 
-.content{
-    border: rgb(144, 78, 230) solid 2px;
-    box-shadow: 2px 5px 0px 0px rgb(144, 78, 230);
-    background-color: rgb(95, 7, 211);
+// Content inside the container
+.content {
+    border: $primary-border-color solid $border-width;
+    box-shadow: $shadow-offset-x $shadow-offset-y 0px 0px $primary-border-color;
+    background-color: $container-bg-color;
     width: 80%;
     min-height: 100px;
-    border-radius: 20px;
+    border-radius: $primary-border-radius;
     padding: 20px;
 }
-.close{
+
+// Close button container
+.close {
     width: 85%;
     display: flex;
     margin-bottom: 10px;
     z-index: 1000;
-
 }
 
-.close img{
-    width:14px;
+// Close button image
+.close img {
+    width: 14px;
     height: auto;
-
-
 }
 
+// Media queries for larger screens
 @media (min-width: 550px) {
-    .close *{
-        transform: scale(1.2);
+    .close * {
+        transform: scale(1.2); // Scaling all children of .close on larger screens
     }
-
 }
-
-

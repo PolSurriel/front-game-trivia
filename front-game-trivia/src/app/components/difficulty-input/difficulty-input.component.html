@@ -1,12 +1,18 @@
+<!-- Container for difficulty options -->
 <div class="container">
-    <p>
-        Difficulty
-    </p>
+    
+    <!-- Difficulty label -->
+    <p>Difficulty</p>
+
+    <!-- Options for difficulty levels -->
     <div class="options">
+        <!-- Easy option -->
         <div class="option first" (click)="selectOption('easy')" #easyOption>Easy</div>
+        
+        <!-- Medium option -->
         <div class="option second" (click)="selectOption('medium')" #mediumOption>Medium</div>
-        <div class="option third" (click)="selectOption('hard')"  #hardOption>Hard</div>
+        
+        <!-- Hard option -->
+        <div class="option third" (click)="selectOption('hard')" #hardOption>Hard</div>
     </div>
 </div>
-
-

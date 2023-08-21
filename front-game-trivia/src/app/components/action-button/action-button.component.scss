@@ -1,33 +1,36 @@
-$horizontal-padding: 55px;
-$vertical-padding: 10px;
-$shadow-size: 5px;
-$bodrder-radius: 15px;
-$border-size: 2px;
+// Variables
+$horizontal-padding: 55px;  // Horizontal padding for buttons
+$vertical-padding: 10px;    // Vertical padding for buttons
+$shadow-size: 5px;          // Shadow size for elements
+$border-radius: 15px;       // Standard border radius
+$border-size: 2px;          // Standard border size
 
-// action-button.component.scss
+// General button styling
 button {
+  // Text properties
   color: var(--font-color);
-  padding: $vertical-padding;
-  padding-left: $horizontal-padding;
-  padding-right: $horizontal-padding;
+  font-size: 40px;
 
+  // Padding and background
+  padding: $vertical-padding $horizontal-padding;
   background-color: var(--bg-color);
-  border: $border-size solid var(--border-color);
 
-  border-radius: $bodrder-radius;
+  // Border properties
+  border: $border-size solid var(--border-color);
+  border-radius: $border-radius;
+
+  // Shadow properties
   box-shadow: 1px $shadow-size 0px 0px var(--shadow-color);
 
-  font-size: 40px;
+  // Hover state properties
+  &:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
 }
 
-button:hover {
-  cursor: pointer;
-  opacity: 0.7;
-}
-
-
-.clicked{
-  box-shadow: none!important;
-  transform: translateY(5px);
-  
+// Styling for a clicked button
+.clicked {
+  box-shadow: none !important; // Remove shadow when button is clicked
+  transform: translateY(5px);  // Slight move down for a clicked effect
 }

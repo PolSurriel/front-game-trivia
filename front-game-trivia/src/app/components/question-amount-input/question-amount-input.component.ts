@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output  } from '@angular/core';
+// Angular core imports
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-question-amount-input',
@@ -6,15 +7,19 @@ import { Component, EventEmitter, Output  } from '@angular/core';
   styleUrls: ['./question-amount-input.component.scss']
 })
 export class QuestionAmountInputComponent {
+
+  // Default value to represent the selected number of questions
   radioModel = '5';
 
+  // Output event to notify parent components of a change in the selected number of questions
   @Output() onQuestionAmountChange = new EventEmitter<number>();
 
+  // Component's constructor
   constructor() { }
 
-  setQuestionAmount(amount : number) {
+  // Method to emit the number of questions selected by the user
+  setQuestionAmount(amount: number) {
     this.onQuestionAmountChange.emit(amount);
   }
-
 
 }

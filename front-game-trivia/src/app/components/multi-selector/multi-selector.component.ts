@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output, Input  } from '@angular/core';
+// Angular core imports
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-multi-selector',
@@ -6,12 +7,19 @@ import { Component, EventEmitter, Output, Input  } from '@angular/core';
   styleUrls: ['./multi-selector.component.scss']
 })
 export class MultiSelectorComponent {
-  @Input() options: string[];
-  selectedOptions: string[] = [];
-  filterTerm: string = '';
 
-  @Output() onOptionsChange = new EventEmitter<string[]>();
+  @Input() options: string[]; // List of options available for selection
+  selectedOptions: string[] = []; // Current selected options by the user
+  filterTerm: string = ''; // Potential property for future feature to filter options
 
+  @Output() onOptionsChange = new EventEmitter<string[]>(); // Event emitter to notify the parent component of selection changes
+
+  /**
+   * Adds a selected option to the selectedOptions array if it doesn't already exist.
+   * Then emits the current state of selectedOptions to the parent component.
+   * 
+   * @param option The option selected by the user
+   */
   selectOption(option: string) {
     if (!this.selectedOptions.includes(option)) {
       this.selectedOptions = [...this.selectedOptions, option];
@@ -19,6 +27,12 @@ export class MultiSelectorComponent {
     this.onOptionsChange.emit(this.selectedOptions);
   }
 
+  /**
+   * Removes a selected option from the selectedOptions array.
+   * Then emits the updated state of selectedOptions to the parent component.
+   * 
+   * @param option The option to be removed
+   */
   removeOption(option: string) {
     this.selectedOptions = this.selectedOptions.filter(item => item !== option);
     this.onOptionsChange.emit(this.selectedOptions);

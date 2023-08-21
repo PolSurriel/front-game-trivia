@@ -1,47 +1,68 @@
+<!-- Main container for displaying question and options -->
+<div class="main-container screen">
 
-<div class ="main-container screen">
-    <div class = "barsection">
-        <div class="closebtn"
-            (click)="onCloseClick()"
-        >
-    <img class="closeicon" src="assets/img/closeicon.png" alt="">
+    <!-- Section for progress bar and close button -->
+    <div class="barsection">
+
+        <!-- Close button with associated icon -->
+        <div class="closebtn" (click)="onCloseClick()">
+            <img class="closeicon" src="assets/img/closeicon.png" alt="Close Icon">
+        </div>
+
+        <!-- Progress bar indicating progress through questions -->
+        <app-progressbar [progress]="barProgress"></app-progressbar>
     </div>
-        <app-progressbar 
-        [progress]="barProgress"
-        ></app-progressbar>
-    </div>
+
+    <!-- Section for displaying the question and its options -->
     <div>
+
+        <!-- Displaying question number -->
         <p class="questionnumeration">
-            {{questionIndex+1}}.
+            {{ questionIndex + 1 }}.
         </p>
+
+        <!-- Displaying the main question content -->
         <app-question-content>
-            {{question}}
+            {{ question }}
         </app-question-content>
+
+        <!-- Container for all answer options -->
         <div class="answerscontainer">
+
+            <!-- Loop through answers and display each with conditional styling -->
             <div 
                 class="answerOption" 
                 (click)="onAnswerClick(i)"  
-                [ngClass]="{'
-                    selected': selectedAnswer === i && waitingForAnswer,
+                [ngClass]="{
+                    'selected': selectedAnswer === i && waitingForAnswer,
                     'incorrect': selectedAnswer === i && !waitingForAnswer && correctAnswerId !== answers[i].id,
                     'correct' : correctAnswerId === answers[i].id,
                 }" 
                 *ngFor="let answer of answers; let i = index">
-                {{i+1}}. {{answers[i].text}}
+                {{ i+1 }}. {{ answers[i].text }}
             </div>
         </div>
 
     </div>
+
+    <!-- Section for action buttons -->
     <div class="action-button">
+
+        <!-- Answer button, displayed while waiting for the user's answer -->
         <app-action-button
-        (click)="onSubmitClick()"
-        *ngIf="waitingForAnswer"
-        type="important-action"
-        >Answer</app-action-button>
+            (click)="onSubmitClick()"
+            *ngIf="waitingForAnswer"
+            type="important-action">
+            Answer
+        </app-action-button>
+
+        <!-- Next button, displayed after user has provided an answer -->
         <app-action-button
-        (click)="onClickNext()"
-        *ngIf="!waitingForAnswer"
-        type="main"
-        >Next</app-action-button>
+            (click)="onClickNext()"
+            *ngIf="!waitingForAnswer"
+            type="main">
+            Next
+        </app-action-button>
     </div>
+
 </div>

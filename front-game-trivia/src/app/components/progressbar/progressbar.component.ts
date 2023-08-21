@@ -1,3 +1,4 @@
+// Angular core imports
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -7,6 +8,8 @@ import { Component, Input } from '@angular/core';
 })
 export class ProgressbarComponent {
 
-  @Input() progress : number = 10;
+  // Input property to receive the current progress value for the progress bar
+  // By default, the progress is set to 10
+  @Input() progress: number = 10;
 
 }

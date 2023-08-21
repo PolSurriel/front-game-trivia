@@ -1,5 +1,13 @@
+// Importing external stylesheets
 @import '~font-awesome/css/font-awesome.css';
 
+// Importing Bootstrap SCSS file
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+// Importing Datepicker SCSS file
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
+// Font face definitions
 @font-face {
     font-family: 'main-bold';
     src: 
@@ -9,103 +17,83 @@
     font-weight: normal;
     font-style: normal;
     font-display: swap; 
-  }
-  
+}
+
 @font-face {
-font-family: 'main';
-src: 
-    url('assets/fonts/DINRoudPro/DINRoundPro-Black.woff2') format('woff2'),
-    url('assets/fonts/DINRoudPro/DINRoundPro-Black.woff') format('woff'),
-    url('assets/fonts/DINRoudPro/DINRoundPro-Black.ttf') format('truetype');
-font-weight: normal;
-font-style: normal;
-font-display: swap; 
+    font-family: 'main';
+    src: 
+        url('assets/fonts/DINRoudPro/DINRoundPro-Black.woff2') format('woff2'),
+        url('assets/fonts/DINRoudPro/DINRoundPro-Black.woff') format('woff'),
+        url('assets/fonts/DINRoudPro/DINRoundPro-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
 }
 
 @font-face {
     font-family: 'logo';
     src: 
-        // url('assets/fonts/a_alloy_ink/aAlloyInk.otf') format('otf'),
         url('assets/fonts/feather/feather_bold_by_typicalbro44_dee263c.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap; 
 }
 
-
-
-*{
+// Global styles
+* {
     font-family: 'main', sans-serif;
     color: whitesmoke;
+    user-select: none;
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
 }
 
-.screen{
+// Screen styling
+.screen {
     background-color: rgb(111, 0, 255);
     bottom: 0;
     top: 0;
     position: fixed;
 }
-/* Importing Bootstrap SCSS file. */
-@import "./node_modules/bootstrap/scss/bootstrap";
 
-/* Importing Datepicker SCSS file. */
-@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
-
-
-.btn{
+// Button styling
+.btn {
     background-color: rgb(69, 192, 141);
     border-color: rgb(55, 136, 102) !important;
     padding: 10px 20px;
     font-size: 20px;
     box-shadow: 2px 2px 0px 0px rgb(64, 153, 116);
 
+    &:hover, &.active {
+        background-color: rgb(64, 153, 116) !important;
+        border-color: rgb(55, 136, 102) !important;
+    }
 }
 
-.btn:hover{
-    background-color: rgb(64, 153, 116) !important;
-    border-color: rgb(55, 136, 102) !important;
-
-}
-
-.btn.active{
-    background-color: rgb(64, 153, 116) !important;
-    border-color: rgb(55, 136, 102) !important;
-
-}
-
-.progress-bar{
+// Progress bar styling
+.progress-bar {
     background-color: rgb(38, 219, 108) !important;
 }
-*{
-    user-select: none;
-}
 
-/* width */
+// Custom scrollbar styling
 ::-webkit-scrollbar {
     width: 10px;
     border-radius: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #ffffff2c; 
-    border-radius: 10px;
-
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: #888; 
-    
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-      background: #555; 
-  }
+::-webkit-scrollbar-track {
+    background: #ffffff2c; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #888;
+
+    &:hover {
+        background: #555;
+    }
+}

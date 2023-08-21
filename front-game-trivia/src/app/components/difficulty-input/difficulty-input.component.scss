@@ -1,46 +1,52 @@
-$animation-duration: 0.3s;
+// Variables
+$animation-duration: 0.3s; // Duration for animations
+$default-font-size: 35px; // Default font size for options
+$reduced-font-size: 25px; // Font size for secondary options
+$default-opacity: 1;      // Default opacity for options
+$reduced-opacity: 0.67;   // Opacity for secondary options
+$option-spacing: 220px;   // Spacing between options
 
-.option{
-    position:absolute;
-    font-size: 35px;
+// General option styling
+.option {
+    position: absolute;
+    font-size: $default-font-size;
     transition: 
         margin-left $animation-duration ease-in-out,
         font-size $animation-duration ease-in-out,
         opacity $animation-duration ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.85;
+    }
 }
 
-.option:hover{
-    cursor: pointer;
-    opacity: 0.85;
-}
-
-.options{
+// Container for multiple options
+.options {
     display: flex;
     justify-content: center;
-}
-
-.second{
-    margin-left: 220px;
-    opacity: 0.67;
-    font-size: 25px;
-
-}
-.third{
-    margin-left: -220px;
-    opacity: 0.67;
-    font-size: 25px;
-
-}
-
-.options{
     height: 80px;
 }
 
+// Styling for secondary option
+.second {
+    margin-left: $option-spacing;
+    opacity: $reduced-opacity;
+    font-size: $reduced-font-size;
+}
+
+// Styling for tertiary option
+.third {
+    margin-left: -$option-spacing;
+    opacity: $reduced-opacity;
+    font-size: $reduced-font-size;
+}
+
+// Media queries for larger screens
 @media (min-width: 550px) {
-    
-    .container{
+    // Adjustments for the container on larger screens
+    .container {
         margin-top: 40px;
         transform: scale(1.5);
     }
-
 }

@@ -1,75 +1,80 @@
+// Variables
+$primary-bg-color: rgb(144, 78, 230);
+$hover-bg-color: rgb(109, 40, 201);
+$selected-bg-color: rgb(69, 192, 141);
+$primary-border-radius: 15px;
+
+// Default styles for clickable elements
 .remove {
     cursor: pointer;
     margin-left: 5px;
 }
 
+// Container for selectors
 .selector-container {
     margin-bottom: 10px;
-    padding-right: 10px;;
+    padding-right: 10px;
 }
 
-p{
+// Default paragraph styling
+p {
     margin-bottom: 5px;
     text-align: center;
 }
 
-.itemselected{
-    background-color: rgb(69, 192, 141);
+// Styling for selected items
+.itemselected {
+    background-color: $selected-bg-color;
     border-radius: 5px;
     margin-right: 5px;
     margin-bottom: 5px;
     display: inline-block;
-    padding-left: 10px;
-    padding-right: 10px;
-
+    padding: 0 10px;
 }
 
-.none{
+// Styling for elements with no content or unavailable content
+.none {
     font-size: 15px;
     text-align: center;
     font-style: italic;
-    
 }
 
-input{
-    margin:10px;
+// Input fields styling
+input {
+    margin: 10px;
     width: 100%;
-    border-radius: 15px;
-    color:cornflowerblue;
+    border-radius: $primary-border-radius;
+    color: cornflowerblue;
     padding-left: 10px;
 }
 
-li{
+// List item styles
+li {
     list-style-type: none;
-    background-color: rgb(144, 78, 230);
+    background-color: $primary-bg-color;
     padding: 10px;
-    border-radius: 15px;
-
+    border-radius: $primary-border-radius;
     text-align: center;
-    margin-bottom: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
-    
-}
+    margin: 0 10px 5px;
 
-li:hover{
-    background-color: rgb(109, 40, 201);
-    cursor: pointer;
-    
-}
-
-// pantallas con width mayot a 550px
-@media (min-width: 550px) {
-    li{
-        font-size: 20px;
-    }
-    p{
-        font-size: 30px;
+    &:hover {
+        background-color: $hover-bg-color;
+        cursor: pointer;
     }
 }
 
-
-ul{
+// Styles for unordered lists
+ul {
     max-height: 300px;
     overflow-y: auto;
+}
+
+// Media queries for larger screens
+@media (min-width: 550px) {
+    li {
+        font-size: 20px;
+    }
+    p {
+        font-size: 30px;
+    }
 }

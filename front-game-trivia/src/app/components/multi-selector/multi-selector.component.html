@@ -1,17 +1,33 @@
+<!-- Display if any item is selected -->
 <p>Selected</p>
+
 <div class="selected-items">
+    <!-- Display each selected item with a remove option -->
     <span *ngFor="let item of selectedOptions" class="itemselected">
-        {{ item }} <span class="remove" (click)="removeOption(item)">×</span>
+        {{ item }} 
+        <!-- Close icon to remove selected item -->
+        <span class="remove" (click)="removeOption(item)">×</span>
     </span>
+
+    <!-- Message to be shown when no items are selected -->
     <p class="none" *ngIf="selectedOptions.length == 0">No category selected</p>
 </div>
 
+<!-- Filter and options selection container -->
 <div class="selector-container">
+    <!-- Input for filtering options -->
     <input type="text" [(ngModel)]="filterTerm" placeholder="Type to filter..." />
+
+    <!-- List of filtered options -->
     <ul>
+        <!-- Display each option that passes the filter and isn't already selected -->
         <li *ngFor="let option of options | categoryFilter:filterTerm:selectedOptions" (click)="selectOption(option)">
             {{ option }}
         </li>
     </ul>
-    <p *ngIf="(options | categoryFilter:filterTerm:selectedOptions).length === 0">No options found with this filter. Please, try with another search therm.</p>
+
+    <!-- Message to be shown when no options match the filter -->
+    <p *ngIf="(options | categoryFilter:filterTerm:selectedOptions).length === 0">
+        No options found with this filter. Please, try with another search term.
+    </p>
 </div>

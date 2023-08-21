@@ -1,18 +1,25 @@
-$edge-disttance:12px;
+// Variables
+$edge-distance: 12px; // Standard margin from the edge
+$small-image-width: 20px; // Image width for smaller screens
+$large-image-width: 40px; // Image width for larger screens
+$breakpoint-width: 500px; // Breakpoint for responsive design changes
 
-app-action-button{
+// Fixed position button styling
+app-action-button {
     position: fixed;
-    right: $edge-disttance;
-    top: $edge-disttance;
+    right: $edge-distance;
+    top: $edge-distance;
 }
 
-img{
-    width: 20px;
+// Default image styling
+img {
+    width: $small-image-width;
     height: auto;
 }
 
-@media (min-width: 500px) {
-    img{
-        width: 40px;
+// Responsive styling for larger screens
+@media (min-width: $breakpoint-width) {
+    img {
+        width: $large-image-width;
     }
 }

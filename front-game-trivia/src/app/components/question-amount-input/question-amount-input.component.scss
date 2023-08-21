@@ -1,25 +1,31 @@
-p{
+// Variables
+$btn-group-padding: 10px 20px;
+$container-large-screen-scale: 1.5;
+
+// Global paragraph styling
+p {
     padding: 0;
     margin: 0;
     margin-bottom: 2px;
 }
 
-.btn-group label{
-    padding: 10px 20px;
+// Styling for labels inside btn-group
+.btn-group label {
+    padding: $btn-group-padding;
 }
 
-.container{
+// Main container styles
+.container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
 
+// Media queries for larger screens
 @media (min-width: 550px) {
-    
-    .container{
+    .container {
         margin-top: 40px;
-        transform: scale(1.5);
+        transform: scale($container-large-screen-scale);
     }
-
 }

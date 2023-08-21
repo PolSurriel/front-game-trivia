@@ -1,12 +1,14 @@
-*{
+// Default styles for all elements
+* {
     font-family: 'logo', sans-serif;
     font-size: 3.4rem;
     margin-top: 10px;
 }
 
+// Media queries for larger screens
 @media (min-width: 500px) {
- *{
-    font-size: 5.4rem;
-    margin-top: 10px;
- }   
+    * {
+        font-size: 5.4rem;
+        // No need to redefine margin-top since it remains the same
+    }   
 }

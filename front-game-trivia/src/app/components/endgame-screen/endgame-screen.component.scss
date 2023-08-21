@@ -1,4 +1,13 @@
-.main-container{
+// Variables
+$primary-bg-color: rgb(218, 183, 241);
+$primary-border-color: rgb(168, 150, 175);
+$primary-text-color: rgb(66, 58, 58);
+$question-text-color: rgb(54, 54, 54);
+$correct-text-color: rgb(27, 199, 27);
+$incorrect-text-color: rgb(180, 42, 32);
+
+// Main container layout
+.main-container {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -6,58 +15,59 @@
     width: 100%;
 }
 
-.historyList{
+// History list styles
+.historyList {
     width: 100%;
     gap: 10px;
     overflow-y: scroll;
     max-height: 400px;
 }
 
-h1{
+// Default title styles
+h1 {
     font-size: 3.5rem;
 }
 
-li{
+// List item styles
+li {
     list-style: none;
-    background-color: rgb(218, 183, 241);
+    background-color: $primary-bg-color;
     border-radius: 25px;
     margin-bottom: 10px;
     width: 90%;
-    padding-left: 20px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    color: rgb(66, 58, 58) !important;
-    border: 2px solid rgb(168, 150, 175);
+    padding: 5px 0 5px 20px;
+    color: $primary-text-color !important;
+    border: 2px solid $primary-border-color;
+
+    p {
+        padding-right: 10px;
+        margin-bottom: 3px;
+    }
 }
 
-li p {
-    padding-right: 10px;
-    margin-bottom: 3px;
+// Text variations for different question types
+.questiontext {
+    color: $question-text-color;
 }
 
-.questiontext{
-    color:rgb(54, 54, 54);
-}
-
-.correctText{
-    color:rgb(27, 199, 27);
+.correctText {
+    color: $correct-text-color;
     padding-left: 10px;
-
 }
 
-.incorrectText{
-    color:rgb(180, 42, 32);
+.incorrectText {
+    color: $incorrect-text-color;
     padding-left: 10px;
-
 }
 
-.endingMessage{
+// Ending message styling
+.endingMessage {
     font-size: 2rem;
     text-align: center;
-    padding:30px;
-    padding-top:0px
+    padding: 30px 0 30px 30px;
 }
 
+// Canvas styling
 canvas {
     position: absolute;
     left: 0;
@@ -66,18 +76,17 @@ canvas {
     height: 100%;
     pointer-events: none;
     z-index: -1;
-    
-  }
-  
+}
 
+// Media queries for different screen sizes
 @media (min-width: 1320px) {
-    .historyContainer{
+    .historyContainer {
         transform: scale(1.4);
     }
 }
 
 @media (min-width: 700px) and (max-width: 1319px) {
-    .historyContainer{
+    .historyContainer {
         transform: scale(1.1);
     }
 }

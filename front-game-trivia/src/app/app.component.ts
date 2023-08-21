@@ -1,8 +1,8 @@
+// Angular core imports
 import { Component, ViewChild } from '@angular/core';
 import { QuestionScreenComponent } from './components/question-screen/question-screen.component';
 import { EndgameScreenComponent } from './components/endgame-screen/endgame-screen.component';
 import { MatchClientService } from './services/match-client.service';
-
 
 @Component({
   selector: 'app-root',
@@ -12,19 +12,27 @@ import { MatchClientService } from './services/match-client.service';
 export class AppComponent {
   title = 'front-game-trivia';
 
-  currentScreen : string = 'welcome';
-  gameSettings : any;
-  currentQuestion : number = 0;
-  gameHistory : any;
+  // Current screen in the game (e.g., welcome, question, endgame)
+  currentScreen: string = 'welcome';
+  
+  // Game configuration settings
+  gameSettings: any;
+  
+  // Index of the current question being displayed
+  currentQuestion: number = 0;
+  
+  // History of the game, including questions and answers
+  gameHistory: any;
 
-  @ViewChild(QuestionScreenComponent) questionScreen : QuestionScreenComponent;
-  @ViewChild(EndgameScreenComponent) endgameScreen : EndgameScreenComponent;
+  // References to child components
+  @ViewChild(QuestionScreenComponent) questionScreen: QuestionScreenComponent;
+  @ViewChild(EndgameScreenComponent) endgameScreen: EndgameScreenComponent;
 
   constructor(
-    private matchClientService : MatchClientService
-  ){}
+    private matchClientService: MatchClientService
+  ) {}
 
-
+  // Utility method to shuffle an array
   shuffleArray(array: any[]) {
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -35,50 +43,47 @@ export class AppComponent {
     return array;
   }
 
-  
-  onStartGame(gameSettings : any) {
-
+  // Handler for starting the game
+  onStartGame(gameSettings: any) {
+    // Shuffle answers for each question
     for (let i = 0; i < gameSettings.questions.length; i++) {
-      gameSettings.questions[i].answers = 
-        this.shuffleArray(gameSettings.questions[i].answers);
-      
+      gameSettings.questions[i].answers = this.shuffleArray(gameSettings.questions[i].answers);
     }
 
     this.gameSettings = gameSettings;
     this.currentQuestion = 0;
     this.currentScreen = 'question';
-
   }
 
+  // Handler for when a question has been answered
   onQuestionAnswered() {
-
-    if(this.currentQuestion == this.gameSettings.questions.length - 1) {
-      this.matchClientService.finishGame(this.gameSettings.id).subscribe((response : any) => {
+    // If it was the last question, fetch game history and move to endgame screen
+    if (this.currentQuestion == this.gameSettings.questions.length - 1) {
+      this.matchClientService.finishGame(this.gameSettings.id).subscribe((response: any) => {
         this.matchClientService.getGameById(this.gameSettings.id)
-          .subscribe((gameHistory : any) => {
+          .subscribe((gameHistory: any) => {
             this.currentScreen = 'endgame';
             this.gameHistory = gameHistory;
           },
-          (error : any) => {
+          (error: any) => {
             console.log(error);
           });
-        
       });
-    }else {
+    } else {
+      // Otherwise, move to the next question
       this.currentQuestion++;
       this.questionScreen.onNextQuestionPressed();
     }
-
   }
 
-  onGameResumeGoBackClicked(){
+  // Handler for when the "go back" button is pressed on the game resume screen
+  onGameResumeGoBackClicked() {
     this.currentScreen = 'welcome';
   }
 
-  onGameClose(){
-    
+  // Handler for when the game is closed
+  onGameClose() {
     this.currentScreen = 'welcome';
     this.matchClientService.finishGame(this.gameSettings.gameId);
   }
-
 }

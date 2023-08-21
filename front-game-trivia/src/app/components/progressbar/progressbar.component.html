@@ -1,9 +1,12 @@
-    <progressbar 
-        class="progress-striped active"  
-        [value]="progress" 
-        >
-        <i>
-            <div class="subbar">
-            </div>
-        </i>
-    </progressbar>
+<!-- Main progress bar element, which shows the current progress -->
+<progressbar 
+    class="progress-striped active"  
+    [value]="progress" 
+>
+
+    <!-- Inner progress bar indicator, represents the actual progress -->
+    <i>
+        <div class="subbar"></div>
+    </i>
+
+</progressbar>

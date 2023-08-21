@@ -9,59 +9,71 @@ import { CategorySelectorInputComponent } from '../category-selector-input/categ
 })
 export class WelcomeScreenComponent {
 
-  config : any = {
-    amount : 5,
-    category : [],
-    difficulty : 'easy'
+  // Configuration object for game setup
+  config: any = {
+    amount: 5,
+    category: [],
+    difficulty: 'easy'
   };
 
-  animationCloseScreenDuration : number = 500;
+  // Duration for closing screen animation
+  animationCloseScreenDuration: number = 500;
 
+  // Event to be emitted when starting the game
   @Output() onStartGameEvent = new EventEmitter<any>();
   
-  @ViewChild(CategorySelectorInputComponent) categorySelector : CategorySelectorInputComponent;
-  @ViewChild('container') container : ElementRef;
+  // References to child components and elements
+  @ViewChild(CategorySelectorInputComponent) categorySelector: CategorySelectorInputComponent;
+  @ViewChild('container') container: ElementRef;
 
-  readyToClose : boolean = false;
+  // State to check if the screen is ready to close
+  readyToClose: boolean = false;
 
   constructor(
-    private matchClientService : MatchClientService
+    private matchClientService: MatchClientService
   ) { }
 
+  // After component's view is initialized, the game's category is set
   ngAfterViewInit(): void {
     this.config.category = this.categorySelector.customSelection;
   }
 
-  onQuestionAmountChange(amount : number) {
+  // Update the game's question amount
+  onQuestionAmountChange(amount: number) {
     this.config.amount = amount;
   }
 
-  onSelectedDifficultyChange(difficulty : string) {
+  // Update the game's difficulty
+  onSelectedDifficultyChange(difficulty: string) {
     this.config.difficulty = difficulty;
   }
 
-  onQuestionCategoryChange(category : string[]) {
+  // Update the game's category
+  onQuestionCategoryChange(category: string[]) {
     this.config.category = category;
   }
 
-  onStartGame(game: any){
-    if(this.readyToClose){
+  // Emit the game start event (recursive if not ready)
+  onStartGame(game: any) {
+    if (this.readyToClose) {
       this.onStartGameEvent.emit(game);
-    }else {
+    } else {
       setTimeout(() => {
         this.onStartGame(game);
       }, this.animationCloseScreenDuration);
     }
-
   }
 
-  onPlayClick(){
+  // Handle play button click. Triggers screen hide animation and creates a new game
+  onPlayClick() {
+    // Add the 'hide' class for the animation
     this.container.nativeElement.classList.add('hide');
     this.readyToClose = false;
     setTimeout(() => {
       this.readyToClose = true;
     }, this.animationCloseScreenDuration);
 
+    // Use the service to create a new game with the selected configuration
     this.matchClientService
       .createNewGame(
         this.config.amount,

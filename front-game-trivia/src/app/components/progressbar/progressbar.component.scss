@@ -1,23 +1,32 @@
-progressbar{
+// Variables
+$primary-border-radius: 20px;
+$subbar-border-radius: 10px;
+$bar-bg-color: aliceblue;
+
+// Main progress bar styles
+progressbar {
     width: 100%;
     min-width: 10px;
-    border-radius: 20px;
+    border-radius: $primary-border-radius;
     height: 23px;
 }
 
-.subbar{
+// Inner progress sub-bar
+.subbar {
     width: 80%;
     background-color: rgba(255, 255, 255, 0.315);
     height: 4px;
-    border-radius: 10px;
-    margin-top: -4px;
+    border-radius: $subbar-border-radius;
+    margin-top: -4px; // Negative margin to adjust the position
 }
 
-i{
+// Icon styling
+i {
     display: flex;
     justify-content: center;
 }
 
-bar{
-    background-color: aliceblue !important;
+// Bar styling (Note: "bar" is not a standard HTML element, ensure this is a custom component or replace with an appropriate selector.)
+bar {
+    background-color: $bar-bg-color
 }

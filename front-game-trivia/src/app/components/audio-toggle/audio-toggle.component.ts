@@ -1,6 +1,8 @@
+// Angular imports
 import { Component } from '@angular/core';
-import { AudioService } from 'src/app/services/audio.service';
 
+// Application specific imports
+import { AudioService } from 'src/app/services/audio.service';
 
 @Component({
   selector: 'app-audio-toggle',
@@ -9,14 +11,21 @@ import { AudioService } from 'src/app/services/audio.service';
 })
 export class AudioToggleComponent {
 
+  // Property to keep track if the audio is ON or OFF
   audioOn: boolean = false;
 
+  // Inject the AudioService into the component
   constructor(private audioService: AudioService) { }
 
-  onClick(event: Event){
+  // Method to handle the click event on the audio toggle button
+  onClick(event: Event) {
+    // Toggle the audioOn property
     this.audioOn = !this.audioOn;
+
+    // Inform the audio service about the change in audio state
     this.audioService.setSoundsActive(this.audioOn);
+
+    // Stop the event propagation so that any parent listeners don't get triggered
     event.stopPropagation();
   }
-
 }

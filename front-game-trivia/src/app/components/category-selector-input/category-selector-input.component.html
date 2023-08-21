@@ -1,17 +1,43 @@
-
+<!-- Container for category selection -->
 <div class="container">
-    <p>Categories</p>
-    <div class="btn-group">
-      <label class="btn btn-primary" [(ngModel)]="radioModel" (click)="selectCategory('all')"
-             btnRadio="all" tabindex="0" role="button">All</label>
-      <label class="btn btn-primary" [(ngModel)]="radioModel" (click)="selectCategory('custom')"
-             btnRadio="custom" tabindex="0" role="button">Custom...</label>
+    
+       <!-- Title for category selection -->
+       <p>Categories</p>
        
-    </div>
-</div>
-<app-pop-up-section #popUpRef (onClose)="onPopupClose()">
+       <!-- Button group for category options -->
+       <div class="btn-group">
+         
+           <!-- Button for "All" category selection -->
+           <label 
+               class="btn btn-primary" 
+               [(ngModel)]="radioModel" 
+               (click)="selectCategory('all')"
+               btnRadio="all" 
+               tabindex="0" 
+               role="button">
+               All
+           </label>
+           
+           <!-- Button for custom category selection -->
+           <label 
+               class="btn btn-primary" 
+               [(ngModel)]="radioModel" 
+               (click)="selectCategory('custom')"
+               btnRadio="custom" 
+               tabindex="0" 
+               role="button">
+               Custom...
+           </label>
+       </div>
+   </div>
+   
+   <!-- Pop-up section that will contain the multi-selector for categories -->
+   <app-pop-up-section #popUpRef (onClose)="onPopupClose()">
+       
+       <!-- Multi selector component to select multiple categories -->
        <app-multi-selector
-       (onOptionsChange)="categoryMultiSelectionChanges($event)"
-       [options]="possibleCategories"
-       ></app-multi-selector>
-</app-pop-up-section>
+           (onOptionsChange)="categoryMultiSelectionChanges($event)"
+           [options]="possibleCategories">
+       </app-multi-selector>
+   </app-pop-up-section>
+   

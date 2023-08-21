@@ -1,13 +1,53 @@
+<!-- Main container for question amount selection -->
 <div class="container">
-     <p>Quesiton amount</p>
+
+     <!-- Heading indicating the purpose of the following buttons -->
+     <p>Question amount</p>
+     
+     <!-- Group of buttons allowing users to select a specific number of questions -->
      <div class="btn-group">
-       <label class="btn btn-primary" [(ngModel)]="radioModel" (click)="setQuestionAmount(5)"
-              btnRadio="5" tabindex="0" role="button">5</label>
-       <label class="btn btn-primary" [(ngModel)]="radioModel" (click)="setQuestionAmount(10)"
-              btnRadio="10" tabindex="0" role="button">10</label>
-         <label class="btn btn-primary" [(ngModel)]="radioModel" (click)="setQuestionAmount(15)"
-              btnRadio="15" tabindex="0" role="button">15</label>
-         <label class="btn btn-primary" [(ngModel)]="radioModel" (click)="setQuestionAmount(20)"
-              btnRadio="20" tabindex="0" role="button">20</label>
+ 
+         <!-- Button for selecting 5 questions -->
+         <label class="btn btn-primary" 
+                [(ngModel)]="radioModel" 
+                (click)="setQuestionAmount(5)"
+                btnRadio="5" 
+                tabindex="0" 
+                role="button">
+             5
+         </label>
+ 
+         <!-- Button for selecting 10 questions -->
+         <label class="btn btn-primary" 
+                [(ngModel)]="radioModel" 
+                (click)="setQuestionAmount(10)"
+                btnRadio="10" 
+                tabindex="0" 
+                role="button">
+             10
+         </label>
+ 
+         <!-- Button for selecting 15 questions -->
+         <label class="btn btn-primary" 
+                [(ngModel)]="radioModel" 
+                (click)="setQuestionAmount(15)"
+                btnRadio="15" 
+                tabindex="0" 
+                role="button">
+             15
+         </label>
+ 
+         <!-- Button for selecting 20 questions -->
+         <label class="btn btn-primary" 
+                [(ngModel)]="radioModel" 
+                (click)="setQuestionAmount(20)"
+                btnRadio="20" 
+                tabindex="0" 
+                role="button">
+             20
+         </label>
+ 
      </div>
-</div>
+ 
+ </div>
+ 

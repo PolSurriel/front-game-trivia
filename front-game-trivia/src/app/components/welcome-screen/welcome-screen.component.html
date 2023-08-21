@@ -1,23 +1,36 @@
+<!-- Main container for the main menu screen -->
+<div class="main-container screen" #container>
 
-<div class ="main-container screen" #container>
-        <app-logo></app-logo>
+    <!-- App logo display -->
+    <app-logo></app-logo>
+    
+    <!-- Main menu with various selectors and inputs -->
     <div class="main-menu">
-        <app-category-selector-input #categorySelector
-        (onCategoryChange)="onQuestionCategoryChange($event)"
-        ></app-category-selector-input>
+
+        <!-- Category selector for questions -->
+        <app-category-selector-input 
+            #categorySelector
+            (onCategoryChange)="onQuestionCategoryChange($event)">
+        </app-category-selector-input>
+        
+        <!-- Input to determine the amount of questions -->
         <app-question-amount-input
-        (onQuestionAmountChange)="onQuestionAmountChange($event)"
-        ></app-question-amount-input>
+            (onQuestionAmountChange)="onQuestionAmountChange($event)">
+        </app-question-amount-input>
+        
+        <!-- Input to select the difficulty level -->
         <app-difficulty-input
-        (onSelectedDifficultyChange)="onSelectedDifficultyChange($event)"
-        ></app-difficulty-input>
+            (onSelectedDifficultyChange)="onSelectedDifficultyChange($event)">
+        </app-difficulty-input>
 
     </div>
+
+    <!-- Play button to start the game -->
     <app-action-button 
-    class="play-button"
-    [type]="'main'"
-    (click)="onPlayClick()"
-    >PLAY</app-action-button>
+        class="play-button"
+        [type]="'main'"
+        (click)="onPlayClick()">
+        PLAY
+    </app-action-button>
     
 </div>
-
