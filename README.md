@@ -1,7 +1,3 @@
-¡Perfecto! Ahora redactaré un README detallado y maquetado para el repositorio `front-game-trivia` basándome en la información que has proporcionado:
-
----
-
 # 🎮 Front Game Trivia 
 
 Welcome to the frontend of the Game Trivia application! Designed with mobile users in mind, this Angular-based application provides an interactive and visually appealing experience for trivia enthusiasts.
@@ -58,8 +54,5 @@ This project is licensed under the MIT License. See the `LICENSE.md` file for de
 
 ## 📞 Contact
 
-For more details or inquiries, please reach out to [email@domain.com](mailto:email@domain.com).
-
----
-
-Espero que este README cumpla con tus expectativas para el repositorio `front-game-trivia`. Si hay algún otro detalle o sección que quieras agregar o modificar, no dudes en decírmelo.
+For more details or inquiries, please reach out to [psurrielm@gmail.com](mailto:psurrielm@gmail.com).
+.
