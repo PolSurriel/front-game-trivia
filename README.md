@@ -6,6 +6,7 @@ Welcome to the frontend of the Game Trivia application! Designed with mobile use
 
 - [Design Philosophy](#design-philosophy)
 - [Color Palette](#color-palette)
+- [Wireframes](#wireframes)
 - [Getting Started](#getting-started)
 - [Further Development](#further-development)
 - [Contributing](#contributing)
@@ -23,6 +24,10 @@ The chosen color palette revolves around vibrant background colors, and here's w
 - **Game-Friendly**: Vibrant background colors are apt for a gaming application, creating an engaging environment.
 - **Energetic Feel**: An energetic palette adds personality and is effective in conveying emotions.
 - **Design Simplification**: Opting for such a palette eliminates the need for multiple themes, such as light and dark, simplifying the design process.
+
+## ✏️ Wireframes
+
+For a visual representation of the application's user experience and design flow, check out the wireframes. They are located in the `/docs/UX` directory of the repository. These wireframes provide insights into the initial design considerations and the overall layout of the application.
 
 ## 🚀 Getting Started
 
