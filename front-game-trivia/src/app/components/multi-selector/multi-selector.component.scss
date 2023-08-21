@@ -47,8 +47,27 @@ li{
 
     text-align: center;
     margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
     
 }
+
+li:hover{
+    background-color: rgb(109, 40, 201);
+    cursor: pointer;
+    
+}
+
+// pantallas con width mayot a 550px
+@media (min-width: 550px) {
+    li{
+        font-size: 20px;
+    }
+    p{
+        font-size: 30px;
+    }
+}
+
 
 ul{
     max-height: 300px;

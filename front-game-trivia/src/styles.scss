@@ -101,11 +101,11 @@ body{
   /* Handle */
   ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: #555; 
-
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
     background: #888; 
+    
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+      background: #555; 
   }
