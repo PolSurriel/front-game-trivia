@@ -12,6 +12,7 @@ $default-font-size: 25px;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    overflow-y: auto;
 }
 
 // Bar section styles
@@ -115,3 +116,5 @@ app-progressbar {
         right: 40px;
     }
 }
+
+

@@ -12,10 +12,14 @@ import { AudioService } from 'src/app/services/audio.service';
 export class AudioToggleComponent {
 
   // Property to keep track if the audio is ON or OFF
-  audioOn: boolean = false;
+  audioOn: boolean ;
 
   // Inject the AudioService into the component
   constructor(private audioService: AudioService) { }
+
+  ngOnInit(): void {
+    this.audioOn = this.audioService.getSoundsActive();
+  }
 
   // Method to handle the click event on the audio toggle button
   onClick(event: Event) {
