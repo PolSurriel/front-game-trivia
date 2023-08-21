@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 declare module 'canvas-confetti';
 import * as confetti from 'canvas-confetti';
+import { AudioService } from 'src/app/services/audio.service';
 
 @Component({
   selector: 'app-endgame-screen',
@@ -16,7 +17,12 @@ export class EndgameScreenComponent {
 
   @Output() onGoBackEvent = new EventEmitter<void>();
 
+  constructor(
+    private audioService : AudioService
+  ) { }
+
   ngOnInit() {
+    this.audioService.playEndSound();
     this.totalAmount = this.gameHistory.questions.length;
     this.correctAmount = 0;
     for (const question of this.gameHistory.questions) {

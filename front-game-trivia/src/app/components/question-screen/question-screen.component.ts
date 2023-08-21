@@ -1,7 +1,7 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { MatchClientService } from 'src/app/services/match-client.service';
 import { ActionButtonComponent } from '../action-button/action-button.component';
-
+import { AudioService } from 'src/app/services/audio.service';
 
 @Component({
   selector: 'app-question-screen',
@@ -26,7 +26,8 @@ export class QuestionScreenComponent {
   @Output() onClose = new EventEmitter<void>();
   
   constructor(
-    private matchClientService : MatchClientService
+    private matchClientService : MatchClientService,
+    private audioService : AudioService
   ) { }
 
 
@@ -43,6 +44,12 @@ export class QuestionScreenComponent {
     let chosenAnswerId = this.answers[this.selectedAnswer].id;    
     this.correctAnswerId = correctAnswerId;
     this.waitingForAnswer = false;
+
+    if(chosenAnswerId == correctAnswerId) {
+      this.audioService.playSuccessSound();
+    }else {
+      this.audioService.playFailSound();
+    }
 
     this.barProgress = ((this.questionIndex+1) / this.questionAmount) * 100;
     
