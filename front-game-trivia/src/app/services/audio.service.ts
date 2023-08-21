@@ -10,9 +10,13 @@ export class AudioService {
   private endSound : HTMLAudioElement = new Audio('assets/audio/endgame.mp3');
   private confettiSound : HTMLAudioElement = new Audio('assets/audio/confetti.mp3');
 
-  soundsOn : boolean = false;
+  private soundsOn : boolean = false;
 
   constructor() { }
+
+  public getSoundsActive() : boolean {
+    return this.soundsOn;
+  }
 
   public setSoundsActive(soundsOn : boolean) {
     this.soundsOn = soundsOn;

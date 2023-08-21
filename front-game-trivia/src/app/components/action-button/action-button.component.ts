@@ -23,6 +23,7 @@ export class ActionButtonComponent {
     private renderer: Renderer2
   ) {}
 
+  
   // Lifecycle hook to handle tasks after the component's view has been fully initialized
   ngAfterViewInit() {
     // Get color palette based on type

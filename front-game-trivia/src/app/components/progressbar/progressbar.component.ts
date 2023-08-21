@@ -10,6 +10,6 @@ export class ProgressbarComponent {
 
   // Input property to receive the current progress value for the progress bar
   // By default, the progress is set to 10
-  @Input() progress: number = 10;
+  @Input() progress: number;
 
 }

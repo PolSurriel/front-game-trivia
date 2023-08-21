@@ -22,7 +22,7 @@ export class QuestionScreenComponent {
 
   // Variables to manage the game logic and UI state
   correctAnswerId: number;
-  barProgress: number = 10;
+  barProgress: number = 5;
   waitingForAnswer: boolean = true;
   selectedAnswer: number = -1;
 
