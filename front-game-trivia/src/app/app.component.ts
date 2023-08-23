@@ -19,27 +19,27 @@ enum Screen{
 export class AppComponent {
 
   // Current screen in the game (e.g., welcome, question, endgame)
-  currentScreen: Screen = Screen.Welcome;
+  protected currentScreen: Screen = Screen.Welcome;
   
   // References to child components
   @ViewChild(QuestionScreenComponent) questionScreen: QuestionScreenComponent;
 
   constructor(
     private matchClientService: MatchClientService,
-    public gameService: GameService
+    protected gameService: GameService
   ) {}
 
   // Handler for starting the game
-  onStartGame(gameSettings: GameInfo) {
+  protected onStartGame(gameSettings: GameInfo) {
     this.currentScreen = Screen.Question;
   }
 
   // Handler for when the "go back" button is pressed on the game resume screen
-  onGameResumeGoBackClicked() {
+  protected onGameResumeGoBackClicked() {
     this.currentScreen = Screen.Welcome;
   }
 
-  onGameMatchFinished() {
+  protected onGameMatchFinished() {
     this.gameService.getGameHistory().then(() => {
       this.currentScreen = Screen.Endgame;
 
@@ -47,7 +47,7 @@ export class AppComponent {
   }
 
   // Handler for when the game is closed
-  onGameClose() {
+  protected onGameClose() {
     this.currentScreen = Screen.Welcome;
     this.matchClientService.finishGame(this.gameService.currentGame.id);
   }

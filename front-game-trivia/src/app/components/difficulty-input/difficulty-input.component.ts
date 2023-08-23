@@ -10,7 +10,7 @@ import { Difficulty } from 'src/app/enums/difficulty.enum';
 export class DifficultyInputComponent {
 
   // Exporting the enum to be used in the template
-  Difficulty = Difficulty;
+  protected Difficulty = Difficulty;
 
   // References to the individual difficulty option elements in the template
   @ViewChild('easyOption') easyOption: ElementRef;
@@ -24,7 +24,7 @@ export class DifficultyInputComponent {
    * Method to select a difficulty option and update visual styles accordingly
    * @param selected - string value representing the difficulty selected
    */
-  public selectOption(selected: Difficulty): void {
+  protected selectOption(selected: Difficulty): void {
     // Remove any existing positional classes from the options
     this.removePositionalClasses();
 

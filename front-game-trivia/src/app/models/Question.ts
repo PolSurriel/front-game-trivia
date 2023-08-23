@@ -5,6 +5,6 @@ export class Question {
     category: string;
     text: string;
     answers: Answer[];
-    chosenAnswer: number | null;
-    correctAnswerId: number | null;
+    chosenAnswer: Answer | null;
+    correctAnswer: Answer | null;
 }

@@ -9,7 +9,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class QuestionAmountInputComponent {
 
   // Default value to represent the selected number of questions
-  radioModel = '5';
+  protected radioModel = '5';
 
   // Output event to notify parent components of a change in the selected number of questions
   @Output() onQuestionAmountChange = new EventEmitter<number>();
@@ -18,7 +18,7 @@ export class QuestionAmountInputComponent {
   constructor() { }
 
   // Method to emit the number of questions selected by the user
-  setQuestionAmount(amount: number) {
+  protected setQuestionAmount(amount: number) {
     this.onQuestionAmountChange.emit(amount);
   }
 

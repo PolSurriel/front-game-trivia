@@ -46,7 +46,8 @@ export class ActionButtonComponent {
   }
 
   // Method to handle button click
-  onCLick() {
+  
+  protected onCLick() {
     // Add 'clicked' class to button
     this.buttonRef.nativeElement.classList.add('clicked');
     

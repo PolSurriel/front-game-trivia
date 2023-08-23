@@ -23,11 +23,11 @@
                     <p class="questiontext">{{question.text}}</p>
                     
                     <!-- Correct answer text -->
-                    <p class="correctText">Correct answer: {{question.correctAnswer.text}}</p>
+                    <p class="correctText">Correct answer: {{question.correctAnswer?.text}}</p>
                     
                     <!-- Display user's answer if it's incorrect -->
-                    <p class="incorrectText" *ngIf="question.correctAnswer.id !== question.chosenAnswer.id">
-                        Your answer: {{question.chosenAnswer.text}}
+                    <p class="incorrectText" *ngIf="question.correctAnswer?.id !== question.chosenAnswer?.id">
+                        Your answer: {{question.chosenAnswer?.text}}
                     </p>
                 </li>
             </ul>

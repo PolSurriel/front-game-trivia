@@ -12,7 +12,7 @@ import { AudioService } from 'src/app/services/audio.service';
 export class AudioToggleComponent {
 
   // Property to keep track if the audio is ON or OFF
-  audioOn: boolean ;
+  protected audioOn: boolean ;
 
   // Inject the AudioService into the component
   constructor(private audioService: AudioService) { }
@@ -22,7 +22,7 @@ export class AudioToggleComponent {
   }
 
   // Method to handle the click event on the audio toggle button
-  onClick(event: Event) {
+  protected onClick(event: Event) {
     // Toggle the audioOn property
     this.audioOn = !this.audioOn;
 
