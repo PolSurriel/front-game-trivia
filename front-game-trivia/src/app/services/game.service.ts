@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { MatchClientService } from './match-client.service';
 import { GameInfo } from '../models/GameInfo';
 import { ArrayUtilitiesService } from './array-utilities.service';
+import { IGameService } from './igame.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class GameService {
+export class GameService implements IGameService {
   currentGame: GameInfo;
   currentQuestionIndex: number = 0;
 
