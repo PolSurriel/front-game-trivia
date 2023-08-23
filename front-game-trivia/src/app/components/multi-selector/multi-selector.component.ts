@@ -9,8 +9,8 @@ import { Component, EventEmitter, Output, Input } from '@angular/core';
 export class MultiSelectorComponent {
 
   @Input() options: string[]; // List of options available for selection
-  selectedOptions: string[] = []; // Current selected options by the user
-  filterTerm: string = ''; // Potential property for future feature to filter options
+  protected selectedOptions: string[] = []; // Current selected options by the user
+  protected filterTerm: string = ''; // Potential property for future feature to filter options
 
   @Output() onOptionsChange = new EventEmitter<string[]>(); // Event emitter to notify the parent component of selection changes
 
@@ -20,7 +20,7 @@ export class MultiSelectorComponent {
    * 
    * @param option The option selected by the user
    */
-  selectOption(option: string) {
+  protected selectOption(option: string) {
     if (!this.selectedOptions.includes(option)) {
       this.selectedOptions = [...this.selectedOptions, option];
     }
@@ -33,7 +33,7 @@ export class MultiSelectorComponent {
    * 
    * @param option The option to be removed
    */
-  removeOption(option: string) {
+  protected removeOption(option: string) {
     this.selectedOptions = this.selectedOptions.filter(item => item !== option);
     this.onOptionsChange.emit(this.selectedOptions);
   }

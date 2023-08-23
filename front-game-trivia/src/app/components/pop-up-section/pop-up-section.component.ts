@@ -9,7 +9,7 @@ import { Component, EventEmitter, Output, Input } from '@angular/core';
 export class PopUpSectionComponent {
 
   // Property to determine if the pop-up is currently opened or closed
-  opened: boolean = false;
+  protected opened: boolean = false;
 
   // Event emitted to notify the parent component when the pop-up is closed
   @Output() onClose = new EventEmitter<void>();

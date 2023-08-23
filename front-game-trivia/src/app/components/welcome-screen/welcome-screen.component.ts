@@ -13,14 +13,14 @@ import { GameService } from 'src/app/services/game.service';
 export class WelcomeScreenComponent {
 
   // Configuration object for game setup
-  config: any = {
+  private config: any = {
     amount: 5,
     category: [],
     difficulty: Difficulty.EASY
   };
 
   // Duration for closing screen animation
-  animationCloseScreenDuration: number = 500;
+  private animationCloseScreenDuration: number = 500;
 
   // Event to be emitted when starting the game
   @Output() onStartGameEvent = new EventEmitter<GameInfo>();
@@ -30,7 +30,7 @@ export class WelcomeScreenComponent {
   @ViewChild('container') container: ElementRef;
 
   // State to check if the screen is ready to close
-  readyToClose: boolean = false;
+  private readyToClose: boolean = false;
 
   constructor(
     private gameService: GameService
@@ -42,22 +42,22 @@ export class WelcomeScreenComponent {
   }
 
   // Update the game's question amount
-  onQuestionAmountChange(amount: number) {
+  protected onQuestionAmountChange(amount: number) {
     this.config.amount = amount;
   }
 
   // Update the game's difficulty
-  onSelectedDifficultyChange(difficulty: string) {
+  protected onSelectedDifficultyChange(difficulty: string) {
     this.config.difficulty = difficulty;
   }
 
   // Update the game's category
-  onQuestionCategoryChange(category: string[]) {
+  protected onQuestionCategoryChange(category: string[]) {
     this.config.category = category;
   }
 
   // Emit the game start event (recursive if not ready)
-  onStartGame(game: GameInfo) {
+  private onStartGame(game: GameInfo) {
     if (this.readyToClose) {
       this.onStartGameEvent.emit(game);
     } else {
@@ -68,7 +68,7 @@ export class WelcomeScreenComponent {
   }
 
   // Handle play button click. Triggers screen hide animation and creates a new game
-  onPlayClick() {
+  protected onPlayClick() {
     
     this.gameService.startNewGame(
       this.config.amount,

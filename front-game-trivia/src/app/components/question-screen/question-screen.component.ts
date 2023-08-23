@@ -13,18 +13,11 @@ import { GameService } from 'src/app/services/game.service';
 })
 export class QuestionScreenComponent {
 
-  // Input properties to accept data from parent components
-  @Input() questionAmount: number;
-  @Input() question: string;
-  // @Input() questionIndex: number;
-  @Input() gameId: number;
-  @Input() answers: any[];
-
   // Variables to manage the game logic and UI state
-  correctAnswerId: number;
-  barProgress: number = 5;
-  waitingForAnswer: boolean = true;
-  selectedAnswer: number = -1;
+  protected correctAnswerId: number;
+  protected barProgress: number = 5;
+  protected waitingForAnswer: boolean = true;
+  protected selectedAnswer: number = -1;
 
   // Reference to the child component actionButton
   @ViewChild('actionButton') actionButton: ActionButtonComponent;
@@ -33,21 +26,38 @@ export class QuestionScreenComponent {
   @Output() onClose = new EventEmitter<void>();
   @Output() onMatchFinished = new EventEmitter<void>();
 
+  // Separate html template from GameService dependency injection
+  protected get currentQuestionIndex(): number {
+    return this.gameService.currentQuestionIndex;
+  }
+
+  protected get currentQuestionText(): string {
+    return this.gameService.currentGame.questions[this.currentQuestionIndex].text;
+  }
+  protected get answers(): any[] {
+    return this.gameService.currentGame.questions[this.currentQuestionIndex].answers;
+  }
+
+  protected get questionAmount(): number {
+    return this.gameService.currentGame.questions.length;
+  }
+
+
   // Component's constructor with services injection
   constructor(
     private audioService: AudioService,
-    public gameService: GameService
+    private gameService: GameService
   ) { }
 
   // Handler for the click event on an answer
-  onAnswerClick(answerIndex: number) {
+  protected onAnswerClick(answerIndex: number) {
     if (!this.waitingForAnswer) return;
 
     this.selectedAnswer = answerIndex;
   }
 
   // Handles the logic when an answer's result is received
-  onAnswerResult(correctAnswerId: number) {
+  private onAnswerResult(correctAnswerId: number) {
 
     let chosenAnswerId = this.answers[this.selectedAnswer].id;
     this.correctAnswerId = correctAnswerId;
@@ -66,7 +76,7 @@ export class QuestionScreenComponent {
   }
 
   // Handles the click event on the next button
-  onClickNext() {
+  protected onClickNext() {
     this.gameService.nextQuestion();
     this.waitingForAnswer = true;
     this.selectedAnswer = -1;
@@ -74,7 +84,7 @@ export class QuestionScreenComponent {
   }
 
   // Submits the selected answer to the service
-  onSubmitClick() {
+  protected onSubmitClick() {
     this.gameService.answerQuestion(this.answers[this.selectedAnswer].id)
     .then((response: any) => {
       this.onAnswerResult(response.correctAnswerId);
@@ -86,7 +96,7 @@ export class QuestionScreenComponent {
 
   }
 
-  onClickGoToResume(){
+  protected onClickGoToResume(){
     this.gameService.finishGame().then(() => {
       this.onMatchFinished.emit();
 
@@ -97,7 +107,7 @@ export class QuestionScreenComponent {
   }
 
   // Handles the click event on the close button
-  onCloseClick() {
+  protected onCloseClick() {
     this.onClose.emit();
   }
 }

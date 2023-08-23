@@ -6,19 +6,12 @@
 <app-question-screen 
     #questionScreen
     class="screen"
-    [correctAnswerId]="gameService.currentGame.questions[gameService.currentQuestionIndex].correctAnswerId"
-    [questionAmount]="gameService.currentGame.questions.length"
-    [question]="gameService.currentGame.questions[gameService.currentQuestionIndex].text"
-    [answers]="gameService.currentGame.questions[gameService.currentQuestionIndex].answers"
-    [gameId]="gameService.currentGame.id"
-    [questionIndex]="gameService.currentQuestionIndex"
     (onClose)="onGameClose()"
     (onMatchFinished)="onGameMatchFinished()"
     *ngIf="currentScreen === 'question'" 
 ></app-question-screen>
 <app-endgame-screen
     #endgameScreen
-    [gameHistory]="gameService.currentGame"
     class="screen"
     (onGoBackEvent)="onGameResumeGoBackClicked()"
     *ngIf="currentScreen === 'endgame'" 
