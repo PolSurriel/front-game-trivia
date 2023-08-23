@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
+import { IArrayUtilitiesService } from './iarray-utilities.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ArrayUtilitiesService {
+export class ArrayUtilitiesService implements IArrayUtilitiesService{
 
   constructor() { }
 
