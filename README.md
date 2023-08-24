@@ -4,6 +4,7 @@ Welcome to the frontend of the Game Trivia application! Designed with mobile use
 
 ## 📌 Table of Contents
 
+- [Angular adaptation program](#angular-adaptatio-program)
 - [Design Philosophy](#design-philosophy)
 - [Color Palette](#color-palette)
 - [Wireframes](#wireframes)
@@ -12,6 +13,38 @@ Welcome to the frontend of the Game Trivia application! Designed with mobile use
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
+
+## Angular adaptation program
+
+In order to ensure that the code quality and architectural decisions made in this project adhere to the best practices of Angular, I've decided to embark on a series of courses once we find and agreement and prior to my incorporation. While I have experience with Angular in personal projects, continuous learning is pivotal to stay updated with the ever-evolving technological landscape. Below is the list of courses I plan to undertake, along with the reasons for choosing them:
+
+1. **[Angular Testing Course](https://www.udemy.com/course/angular-testing-course/)**:
+    - **Importance**: Testing is an indispensable part of software development. This course will provide insights into setting up a testing environment, writing unit tests, and ensuring the robustness of the Angular application. 
+
+2. **[NgRx Course](https://www.udemy.com/course/ngrx-course/)**:
+    - **Importance**: State management is crucial for large applications. NgRx offers a predictable state container, making it easier to manage the application's state in an immutable fashion, ensuring consistent behavior.
+
+3. **[Angular Forms Course](https://www.udemy.com/course/angular-forms-course/)**:
+    - **Importance**: Handling user input efficiently is a core feature of many applications. This course will delve into building reactive forms, validations, and custom form controls, ensuring a seamless user experience.
+
+4. **[Angular Router Course](https://www.udemy.com/course/angular-router-course/)**:
+    - **Importance**: Navigation plays a vital role in any web application. This course will teach advanced routing techniques, lazy loading, and route guards, ensuring efficient navigation within the application.
+
+5. **[RxJS and Reactive Patterns Angular Course](https://www.udemy.com/course/rxjs-reactive-angular-course/)**:
+    - **Importance**: Asynchronous operations are common in web applications. RxJS provides tools to handle data streams and propagation of changes, making it easier to manage asynchronous tasks and data flows.
+
+6. **[Angular Security Course](https://www.udemy.com/course/angular-security/)**:
+    - **Importance**: Security is paramount. This course will cover topics like authentication, authorization, and securing Angular applications against common web threats, ensuring a secure environment for users.
+
+7. **[Angular Advanced Masterclass](https://www.udemy.com/course/angular-advanced-masterclass/)**:
+    - **Importance**: To write efficient and scalable Angular applications, advanced architecture knowledge is necessary. This course will touch upon performance tuning, advanced components, and directives, ensuring the application remains performant.
+
+8. **[Angular Application Architecture Course](https://www.udemy.com/course/angular-application-architecture/)**:
+    - **Importance**: A well-architected application is easier to maintain, scale, and debug. This course will provide insights into designing modular and scalable Angular applications, ensuring long-term maintainability.
+
+By completing these courses, I aim to fortify my knowledge in Angular and ensure that the best practices are consistently followed throughout the development process of this project.
+
+About Spring, I'm already experienced with it.
 
 ## 🎨 Design Philosophy
 
