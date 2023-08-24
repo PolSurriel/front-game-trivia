@@ -1,10 +1,11 @@
 // Angular core imports
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Inject, Input, Output, ViewChild } from '@angular/core';
 // Service imports
 import { AudioService } from 'src/app/services/audio.service';
 // Component imports
 import { ActionButtonComponent } from '../action-button/action-button.component';
-import { GameService } from 'src/app/services/game.service';
+import { IGameService, IGameServiceToken } from 'src/app/services/igame.service';
+
 
 @Component({
   selector: 'app-question-screen',
@@ -46,7 +47,7 @@ export class QuestionScreenComponent {
   // Component's constructor with services injection
   constructor(
     private audioService: AudioService,
-    private gameService: GameService
+    @Inject(IGameServiceToken) private gameService: IGameService
   ) { }
 
   // Handler for the click event on an answer

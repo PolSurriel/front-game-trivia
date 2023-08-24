@@ -1,9 +1,8 @@
-import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Inject, Output, ViewChild } from '@angular/core';
 import { CategorySelectorInputComponent } from '../category-selector-input/category-selector-input.component';
 import { GameInfo } from 'src/app/models/GameInfo';
 import { Difficulty } from 'src/app/enums/difficulty.enum';
-import { GameService } from 'src/app/services/game.service';
-
+import { IGameServiceToken, IGameService } from 'src/app/services/igame.service';
 
 @Component({
   selector: 'app-welcome-screen',
@@ -33,7 +32,7 @@ export class WelcomeScreenComponent {
   private readyToClose: boolean = false;
 
   constructor(
-    private gameService: GameService
+    @Inject(IGameServiceToken) private gameService: IGameService
   ) { }
 
   // After component's view is initialized, the game's category is set

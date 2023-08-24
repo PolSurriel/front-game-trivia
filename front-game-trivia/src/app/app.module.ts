@@ -16,13 +16,15 @@ import { AudioToggleComponent } from './components/audio-toggle/audio-toggle.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
-import { CategoryFilterPipe } from './pipes/category-filter.pipe';
+import { MultiSelectorFilterPipe } from './pipes/category-filter.pipe';
 import { QuestionScreenComponent } from './components/question-screen/question-screen.component';
 import { ProgressbarComponent } from './components/progressbar/progressbar.component';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { QuestionContentComponent } from './components/question-content/question-content.component';
 import { EndgameScreenComponent } from './components/endgame-screen/endgame-screen.component';
 import { HttpClientModule } from '@angular/common/http';
+import { IGameServiceTokenProvider } from './services/igame.service';
+import { IMatchClientServiceTokenProvider } from './services/imatch-client.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     MultiSelectorComponent,
     WelcomeScreenComponent,
     AudioToggleComponent,
-    CategoryFilterPipe,
+    MultiSelectorFilterPipe,
     QuestionScreenComponent,
     ProgressbarComponent,
     QuestionContentComponent,
@@ -53,7 +55,10 @@ import { HttpClientModule } from '@angular/common/http';
     ProgressbarModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    IGameServiceTokenProvider,
+    IMatchClientServiceTokenProvider
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

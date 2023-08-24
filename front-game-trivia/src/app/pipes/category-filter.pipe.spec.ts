@@ -1,8 +1,8 @@
-import { CategoryFilterPipe } from './category-filter.pipe';
+import { MultiSelectorFilterPipe } from './category-filter.pipe';
 
 describe('CategoryFilterPipe', () => {
   it('create an instance', () => {
-    const pipe = new CategoryFilterPipe();
+    const pipe = new MultiSelectorFilterPipe();
     expect(pipe).toBeTruthy();
   });
 });

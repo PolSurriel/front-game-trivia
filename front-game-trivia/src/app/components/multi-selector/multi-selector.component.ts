@@ -1,5 +1,6 @@
 // Angular core imports
 import { Component, EventEmitter, Output, Input } from '@angular/core';
+import { MultiSelectorFilterPipe } from 'src/app/pipes/category-filter.pipe';
 
 @Component({
   selector: 'app-multi-selector',

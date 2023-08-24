@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { MatchClientService } from './match-client.service';
+import { Inject, Injectable } from '@angular/core';
 import { GameInfo } from '../models/GameInfo';
 import { ArrayUtilitiesService } from './array-utilities.service';
 import { IGameService } from './igame.service';
+import { IMatchClientService, IMatchClientServiceToken } from './imatch-client.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class GameService implements IGameService {
   currentQuestionIndex: number = 0;
 
   constructor(
-    private matchClientService: MatchClientService,
+    @Inject(IMatchClientServiceToken) private matchClientService: IMatchClientService,
     private arrayUtilitiesService: ArrayUtilitiesService
   ) {}
 
@@ -66,7 +66,6 @@ export class GameService implements IGameService {
   }
 
   getGameHistory(): Promise<GameInfo> {
-    console.log(this.currentGame);
     return new Promise((resolve, reject) => {
       if (!this.currentGame) {
         reject('No active game.');
@@ -74,7 +73,6 @@ export class GameService implements IGameService {
       }
       this.matchClientService.getGameById(this.currentGame.id)
         .subscribe((data: any) => {
-          console.log(data);
           this.currentGame = data as GameInfo;
           resolve(data);
         }, reject);

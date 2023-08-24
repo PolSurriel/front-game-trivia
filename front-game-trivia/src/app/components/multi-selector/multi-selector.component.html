@@ -21,13 +21,13 @@
     <!-- List of filtered options -->
     <ul>
         <!-- Display each option that passes the filter and isn't already selected -->
-        <li *ngFor="let option of options | categoryFilter:filterTerm:selectedOptions" (click)="selectOption(option)">
+        <li *ngFor="let option of options | multiSelectoFilter:filterTerm:selectedOptions" (click)="selectOption(option)">
             {{ option }}
         </li>
     </ul>
 
     <!-- Message to be shown when no options match the filter -->
-    <p *ngIf="(options | categoryFilter:filterTerm:selectedOptions).length === 0">
+    <p *ngIf="(options | multiSelectoFilter:filterTerm:selectedOptions).length === 0">
         No options found with this filter. Please, try with another search term.
     </p>
 </div>

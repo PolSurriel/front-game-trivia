@@ -1,9 +1,8 @@
 // Angular core imports
-import { Component, ViewChild  } from '@angular/core';
-import { QuestionScreenComponent } from './components/question-screen/question-screen.component';
-import { MatchClientService } from './services/match-client.service';
+import { Component, Inject  } from '@angular/core';
 import { GameInfo } from './models/GameInfo';
-import { GameService } from './services/game.service';
+import { IGameService } from './services/igame.service';
+import { IGameServiceToken } from './services/igame.service';
 
 enum Screen{
   Welcome = 'welcome',
@@ -20,13 +19,9 @@ export class AppComponent {
 
   // Current screen in the game (e.g., welcome, question, endgame)
   protected currentScreen: Screen = Screen.Welcome;
-  
-  // References to child components
-  @ViewChild(QuestionScreenComponent) questionScreen: QuestionScreenComponent;
 
   constructor(
-    private matchClientService: MatchClientService,
-    protected gameService: GameService
+    @Inject(IGameServiceToken) protected gameService: IGameService
   ) {}
 
   // Handler for starting the game
@@ -49,6 +44,6 @@ export class AppComponent {
   // Handler for when the game is closed
   protected onGameClose() {
     this.currentScreen = Screen.Welcome;
-    this.matchClientService.finishGame(this.gameService.currentGame.id);
+    this.gameService.finishGame();
   }
 }

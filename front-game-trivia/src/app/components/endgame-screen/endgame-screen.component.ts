@@ -1,6 +1,6 @@
 // Angular imports
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { GameService } from 'src/app/services/game.service';
+import { Component, EventEmitter, Inject, Input, Output } from '@angular/core';
+import { IGameService, IGameServiceToken } from 'src/app/services/igame.service';
 
 // Third-party module imports
 declare module 'canvas-confetti';
@@ -8,6 +8,7 @@ import * as confetti from 'canvas-confetti';
 
 // Service imports
 import { AudioService } from 'src/app/services/audio.service';
+
 
 @Component({
   selector: 'app-endgame-screen',
@@ -26,7 +27,7 @@ export class EndgameScreenComponent {
 
   constructor(
     private audioService: AudioService, // Injecting the audio service to play sound effects
-    private gameService: GameService    // Injecting the game service to access the game history
+    @Inject(IGameServiceToken) private gameService: IGameService    // Injecting the game service to access the game history
   ) { }
 
   protected get gameHistory() {
