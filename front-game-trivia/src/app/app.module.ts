@@ -16,7 +16,7 @@ import { AudioToggleComponent } from './components/audio-toggle/audio-toggle.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
-import { MultiSelectorFilterPipe } from './pipes/category-filter.pipe';
+import { MultiSelectorFilterPipe } from './pipes/multiselector-filter.pipe';
 import { QuestionScreenComponent } from './components/question-screen/question-screen.component';
 import { ProgressbarComponent } from './components/progressbar/progressbar.component';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
@@ -26,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IGameServiceTokenProvider } from './services/igame.service';
 import { IMatchClientServiceTokenProvider } from './services/imatch-client.service';
 import { CustomAlertsComponent } from './components/custom-alerts/custom-alerts.component';
-import { IAlertServiceTokenProvider } from './services/ialert-service.service';
+import { IAlertServiceTokenProvider } from './services/ialert.service';
 import { LoaderComponent } from './components/loader/loader.component';
 import { IAudioServiceTokenProvider } from './services/iaudio.service';
 import { IArrayUtilitiesServiceTokenProvider } from './services/iarray-utilities.service';

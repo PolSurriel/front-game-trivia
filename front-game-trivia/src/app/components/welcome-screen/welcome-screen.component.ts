@@ -3,7 +3,7 @@ import { CategorySelectorInputComponent } from '../category-selector-input/categ
 import { GameInfo } from 'src/app/models/GameInfo';
 import { Difficulty } from 'src/app/enums/difficulty.enum';
 import { IGameServiceToken, IGameService } from 'src/app/services/igame.service';
-import { IAlertService, IAlertServiceToken } from 'src/app/services/ialert-service.service';
+import { IAlertService, IAlertServiceToken } from 'src/app/services/ialert.service';
 
 @Component({
   selector: 'app-welcome-screen',

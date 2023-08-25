@@ -1,4 +1,4 @@
-import { MultiSelectorFilterPipe } from './category-filter.pipe';
+import { MultiSelectorFilterPipe } from './multiselector-filter.pipe';
 
 describe('CategoryFilterPipe', () => {
   it('create an instance', () => {
