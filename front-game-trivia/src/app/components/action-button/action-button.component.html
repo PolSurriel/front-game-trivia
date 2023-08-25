@@ -1,3 +1,3 @@
-<button #buttonRef (click)="onCLick()">
+<button #buttonRef (click)="onCLick($event)" [ngClass]="{'disabled':!enabled}" >
     <ng-content></ng-content>
 </button>

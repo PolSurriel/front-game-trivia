@@ -34,3 +34,9 @@ button {
   box-shadow: none !important; // Remove shadow when button is clicked
   transform: translateY(5px);  // Slight move down for a clicked effect
 }
+
+
+.disabled {
+  opacity: 0.5 !important; // Make button slightly transparent
+  cursor: not-allowed; // Disable cursor
+}

@@ -50,7 +50,8 @@
 
         <!-- Answer button, displayed while waiting for the user's answer -->
         <app-action-button
-            (click)="onSubmitClick()"
+            (onClick)="onSubmitClick()"
+            [enabled]="selectedAnswer !== -1 && waitingForAnswer"
             *ngIf="waitingForAnswer"
             type="important-action">
             Answer
@@ -58,14 +59,14 @@
 
         <!-- Next button, displayed after user has provided an answer -->
         <app-action-button
-            (click)="onClickNext()"
+            (onClick)="onClickNext()"
             *ngIf="!waitingForAnswer && currentQuestionIndex !== questionAmount - 1"
             type="main">
             Next
         </app-action-button>
 
         <app-action-button
-            (click)="onClickGoToResume()"
+            (onClick)="onClickGoToResume()"
             *ngIf="!waitingForAnswer && currentQuestionIndex === questionAmount - 1"
             type="main">
             Go to resume

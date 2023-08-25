@@ -1,8 +1,8 @@
 import { Inject, Injectable } from '@angular/core';
 import { GameInfo } from '../models/GameInfo';
-import { ArrayUtilitiesService } from './array-utilities.service';
 import { IGameService } from './igame.service';
 import { IMatchClientService, IMatchClientServiceToken } from './imatch-client.service';
+import { IArrayUtilitiesService, IArrayUtilitiesServiceToken } from './iarray-utilities.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class GameService implements IGameService {
 
   constructor(
     @Inject(IMatchClientServiceToken) private matchClientService: IMatchClientService,
-    private arrayUtilitiesService: ArrayUtilitiesService
+    @Inject(IArrayUtilitiesServiceToken) private arrayUtilitiesService: IArrayUtilitiesService
   ) {}
 
   startNewGame(amount: number, difficulty: string, categories: string[]): Promise<GameInfo> {

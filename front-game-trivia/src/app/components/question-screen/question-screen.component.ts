@@ -5,6 +5,7 @@ import { AudioService } from 'src/app/services/audio.service';
 // Component imports
 import { ActionButtonComponent } from '../action-button/action-button.component';
 import { IGameService, IGameServiceToken } from 'src/app/services/igame.service';
+import { IAlertService, IAlertServiceToken } from 'src/app/services/ialert-service.service';
 
 
 @Component({
@@ -47,7 +48,8 @@ export class QuestionScreenComponent {
   // Component's constructor with services injection
   constructor(
     private audioService: AudioService,
-    @Inject(IGameServiceToken) private gameService: IGameService
+    @Inject(IGameServiceToken) private gameService: IGameService,
+    @Inject(IAlertServiceToken) private alertService: IAlertService
   ) { }
 
   // Handler for the click event on an answer
@@ -86,13 +88,14 @@ export class QuestionScreenComponent {
 
   // Submits the selected answer to the service
   protected onSubmitClick() {
+    console.log(this.selectedAnswer);
     this.gameService.answerQuestion(this.answers[this.selectedAnswer].id)
     .then((response: any) => {
       this.onAnswerResult(response.correctAnswerId);
 
     }).catch((error: any) => {
       console.log('Error sending answer!', error);
-      alert('Error sending answer!');
+      this.alertService.sendAlert('Oops! There was a network error! Please try again.');
     });
 
   }
@@ -103,7 +106,7 @@ export class QuestionScreenComponent {
 
     }).catch((error: any) => {
       console.log('Error finishing game!', error);
-      alert('Error finishing game!');
+      this.alertService.sendAlert('Oops! There was a network error! Please try again.');
     });
   }
 
