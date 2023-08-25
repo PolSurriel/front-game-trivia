@@ -5,7 +5,7 @@ import { AudioService } from 'src/app/services/audio.service';
 // Component imports
 import { ActionButtonComponent } from '../action-button/action-button.component';
 import { IGameService, IGameServiceToken } from 'src/app/services/igame.service';
-import { IAlertService, IAlertServiceToken } from 'src/app/services/ialert-service.service';
+import { IAlertService, IAlertServiceToken } from 'src/app/services/ialert.service';
 
 
 @Component({

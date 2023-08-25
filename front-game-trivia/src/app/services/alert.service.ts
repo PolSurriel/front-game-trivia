@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IAlertService } from './ialert-service.service';
+import { IAlertService } from './ialert.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Alert } from '../models/Alert';
 

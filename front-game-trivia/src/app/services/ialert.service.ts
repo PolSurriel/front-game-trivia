@@ -1,6 +1,6 @@
 import { Observable } from "rxjs";
 import { InjectionToken } from "@angular/core";
-import { AlertService } from "./alert-service.service";
+import { AlertService } from "./alert.service";
 import { Alert } from "../models/Alert";
 
 export const IAlertServiceToken = new InjectionToken<IAlertService>('IAlertServiceToken');

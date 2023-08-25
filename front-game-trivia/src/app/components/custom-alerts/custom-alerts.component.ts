@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { Alert } from 'src/app/models/Alert';
-import { IAlertService, IAlertServiceToken } from 'src/app/services/ialert-service.service';
+import { IAlertService, IAlertServiceToken } from 'src/app/services/ialert.service';
 
 @Component({
   selector: 'app-custom-alerts',
