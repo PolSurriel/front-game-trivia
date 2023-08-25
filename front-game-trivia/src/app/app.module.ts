@@ -25,6 +25,12 @@ import { EndgameScreenComponent } from './components/endgame-screen/endgame-scre
 import { HttpClientModule } from '@angular/common/http';
 import { IGameServiceTokenProvider } from './services/igame.service';
 import { IMatchClientServiceTokenProvider } from './services/imatch-client.service';
+import { CustomAlertsComponent } from './components/custom-alerts/custom-alerts.component';
+import { IAlertServiceTokenProvider } from './services/ialert-service.service';
+import { LoaderComponent } from './components/loader/loader.component';
+import { IAudioServiceTokenProvider } from './services/iaudio.service';
+import { IArrayUtilitiesServiceTokenProvider } from './services/iarray-utilities.service';
+
 
 @NgModule({
   declarations: [
@@ -44,6 +50,8 @@ import { IMatchClientServiceTokenProvider } from './services/imatch-client.servi
     ProgressbarComponent,
     QuestionContentComponent,
     EndgameScreenComponent,
+    CustomAlertsComponent,
+    LoaderComponent
     
   ],
   imports: [
@@ -57,7 +65,10 @@ import { IMatchClientServiceTokenProvider } from './services/imatch-client.servi
   ],
   providers: [
     IGameServiceTokenProvider,
-    IMatchClientServiceTokenProvider
+    IMatchClientServiceTokenProvider,
+    IAlertServiceTokenProvider,
+    IAudioServiceTokenProvider,
+    IArrayUtilitiesServiceTokenProvider
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

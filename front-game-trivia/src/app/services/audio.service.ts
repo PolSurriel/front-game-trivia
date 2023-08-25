@@ -1,25 +1,24 @@
 import { Injectable } from '@angular/core';
+import { IAudioService } from './iaudio.service';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AudioService {
+export class AudioService implements IAudioService {
 
   private failSound : HTMLAudioElement = new Audio('assets/audio/fail.mp3');
   private successSound : HTMLAudioElement = new Audio('assets/audio/success.mp3');
   private endSound : HTMLAudioElement = new Audio('assets/audio/endgame.mp3');
   private confettiSound : HTMLAudioElement = new Audio('assets/audio/confetti.mp3');
 
-  private soundsOn : boolean = false;
+  private soundsOnChanged = new BehaviorSubject<boolean>(false);
+  soundsOn : Observable<boolean> = this.soundsOnChanged.asObservable();
 
   constructor() { }
 
-  public getSoundsActive() : boolean {
-    return this.soundsOn;
-  }
-
   public setSoundsActive(soundsOn : boolean) {
-    this.soundsOn = soundsOn;
+    this.soundsOnChanged.next(soundsOn);
   }
 
   public playFailSound() {

@@ -1,5 +1,5 @@
 // Angular imports
-import { Component, Input, Renderer2, ElementRef, ViewChild } from '@angular/core';
+import { Component, Input, Renderer2, ElementRef, ViewChild, Output, EventEmitter } from '@angular/core';
 
 // Application specific imports
 import { ColorPalette } from 'src/app/shared/models/ColorPalette';
@@ -14,6 +14,9 @@ export class ActionButtonComponent {
   // Inputs: for receiving data from parent components
   @Input() type: string;
   @Input() mode: string;
+  @Input() enabled: boolean = true;
+
+  @Output() onClick = new EventEmitter<Event>();
 
   // View reference to the button element
   @ViewChild('buttonRef') buttonRef: ElementRef;
@@ -47,7 +50,10 @@ export class ActionButtonComponent {
 
   // Method to handle button click
   
-  protected onCLick() {
+  protected onCLick(event: Event) {
+
+    if(this.enabled === false) return;
+
     // Add 'clicked' class to button
     this.buttonRef.nativeElement.classList.add('clicked');
     
@@ -55,5 +61,7 @@ export class ActionButtonComponent {
     setTimeout(() => {
       this.buttonRef.nativeElement.classList.remove('clicked');
     }, 200);
+
+    this.onClick.emit(event);
   }
 }

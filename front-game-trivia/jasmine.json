@@ -1,0 +1,14 @@
+{
+    "spec_dir": "src",
+    "spec_files": [
+        "**/*[sS]pec.ts",
+        "./app/components/welcome-screen.component.spec.ts"
+        
+    ],
+    "helpers": [
+        "helpers/**/*.ts"
+    ],
+    "stopSpecOnExpectationFailure": false,
+    "random": true
+}
+  

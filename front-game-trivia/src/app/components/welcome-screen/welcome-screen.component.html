@@ -1,3 +1,6 @@
+<app-loader
+[isActive]="loading"
+></app-loader>
 <!-- Main container for the main menu screen -->
 <div class="main-container screen" #container>
 
@@ -29,7 +32,7 @@
     <app-action-button 
         class="play-button"
         [type]="'main'"
-        (click)="onPlayClick()">
+        (onClick)="onPlayClick()">
         PLAY
     </app-action-button>
     
