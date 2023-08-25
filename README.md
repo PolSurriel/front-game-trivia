@@ -4,6 +4,7 @@ Welcome to the frontend of the Game Trivia application! Designed with mobile use
 
 ## 📌 Table of Contents
 
+- [Screenshots](#angular-adaptatio-program)
 - [Angular adaptation program](#angular-adaptatio-program)
 - [Design Philosophy](#design-philosophy)
 - [Color Palette](#color-palette)
@@ -13,6 +14,15 @@ Welcome to the frontend of the Game Trivia application! Designed with mobile use
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
+
+## Screenshots
+
+### App screenshots
+
+![Welcome screen](https://github.com/PolSurriel/front-game-trivia/blob/main/docs/UX/c0.PNG?s=true)
+![Welcome screen 2](https://github.com/PolSurriel/front-game-trivia/blob/main/docs/UX/c1.PNG?raw=true)
+![Question screen](https://github.com/PolSurriel/front-game-trivia/blob/main/docs/UX/c2.PNG?raw=true)
+![Resume screen](https://github.com/PolSurriel/front-game-trivia/blob/main/docs/UX/c3.PNG?raw=true)
 
 ## Angular adaptation program
 
