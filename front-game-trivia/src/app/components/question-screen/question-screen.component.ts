@@ -17,7 +17,7 @@ export class QuestionScreenComponent {
 
   // Variables to manage the game logic and UI state
   protected correctAnswerId: number;
-  protected barProgress: number = 5;
+  protected barProgress: number = 0;
   protected waitingForAnswer: boolean = true;
   protected selectedAnswer: number = -1;
 
@@ -51,6 +51,12 @@ export class QuestionScreenComponent {
     @Inject(IGameServiceToken) private gameService: IGameService,
     @Inject(IAlertServiceToken) private alertService: IAlertService
   ) { }
+
+    ngOnInit() {
+      // We set the progress to 60 because the first question is already loaded
+      // just to give the player a little positive feedback
+      this.barProgress = ((this.gameService.currentQuestionIndex + 1) / this.questionAmount) * 60;
+    }
 
   // Handler for the click event on an answer
   protected onAnswerClick(answerIndex: number) {
