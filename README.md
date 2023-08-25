@@ -16,7 +16,7 @@ Welcome to the frontend of the Game Trivia application! Designed with mobile use
 
 ## Angular adaptation program
 
-In order to ensure that the code quality and architectural decisions made in this project adhere to the best practices of Angular, I've decided to embark on a series of courses once we find and agreement and prior to my incorporation. While I have experience with Angular in personal projects, continuous learning is pivotal to stay updated with the ever-evolving technological landscape. Below is the list of courses I plan to undertake, along with the reasons for choosing them:
+In order to ensure that the code quality and architectural decisions made in this project adhere to the best practices of Angular, I've decided to embark on a series of courses once we find and agreement and prior to my incorporation. While I have experience with Angular in personal projects, continuous learning is pivotal to stay updated with the ever-evolving technological landscape. Below is the list of courses I plan to undertake, along with the reasons for choosing them. The precence of a resource doesn't imply its content is not implemented or known, just that I want to deep dive into it:
 
 1. **[Angular Testing Course](https://www.udemy.com/course/angular-testing-course/)**:
     - **Importance**: Testing is an indispensable part of software development. This course will provide insights into setting up a testing environment, writing unit tests, and ensuring the robustness of the Angular application. 
