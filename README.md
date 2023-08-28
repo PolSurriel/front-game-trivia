@@ -91,6 +91,7 @@ As the application evolves, here are some considerations:
 
 - **Feature Integration**: Features like user accounts, logins, and more would be integrated into the app's menus.
 - **Desktop Expansion**: With more features, the desktop version could incorporate additional sections, optimizing the screen space.
+- **Refactor question query**: Analyzing it once I've finished the task, I consider that I have misinterpreted a detail of the statement. I think it is expected that the DTO response of the game information will bring less data and each time you go to the next question a new request will be made. The way in which I have raised it brings all the questions at once. Considering that the question information query endpoint is developed and functional, I have decided to leave it that way for the delivery but to state as a pending small change in this README.
 
 ## 🤝 Contributing
 
